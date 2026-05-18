@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akash Mothukuri — Senior Software Engineer</title>
+<meta name="description" content="Senior Software Engineer based in Manchester, UK. React Native, Full-Stack, AR/MR. 1M+ downloads shipped.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#FAFAF7;color:#1C1C1A;font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden;}
+
+:root{
+  --ink:#1C1C1A; --ink2:#3D3D38; --ink3:#7A7A72;
+  --paper:#FAFAF7; --paper2:#F2F0EB; --paper3:#E8E5DD;
+  --rust:#B85C38; --rust2:#D4764F;
+  --sage:#5C7A5E; --line:#D8D4C8;
+}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:18px 64px;background:rgba(250,250,247,0.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.logo-btn{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--ink);background:none;border:none;cursor:pointer;letter-spacing:-0.3px;}
+.logo-btn span{color:var(--rust);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links button{font-family:'Inter',sans-serif;font-size:13px;font-weight:400;color:var(--ink3);background:none;border:none;cursor:pointer;transition:color .2s;padding:2px 0;position:relative;}
+.nav-links button::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--rust);transition:width .25s;}
+.nav-links button:hover{color:var(--ink);}
+.nav-links button:hover::after,.nav-links button.active::after{width:100%;}
+.nav-links button.active{color:var(--ink);}
+.nav-right{display:flex;gap:12px;align-items:center;}
+.nav-cv{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:var(--rust);background:transparent;border:1px solid var(--rust);padding:8px 18px;cursor:pointer;transition:all .2s;letter-spacing:.02em;}
+.nav-cv:hover{background:var(--rust);color:#fff;}
+.nav-hire{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:#fff;background:var(--ink);border:none;padding:8px 18px;cursor:pointer;transition:background .2s;}
+.nav-hire:hover{background:var(--rust);}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:120px 64px 80px;gap:64px;position:relative;}
+.hero::after{content:'';position:absolute;top:0;right:0;width:42%;height:100%;background:var(--paper2);z-index:0;}
+.hero-left{position:relative;z-index:1;}
+.hero-right{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:28px;}
+
+/* Profile photo */
+.photo-wrap{width:260px;height:260px;border-radius:50%;overflow:hidden;border:4px solid var(--paper);box-shadow:0 8px 40px rgba(0,0,0,0.12);position:relative;background:var(--paper3);display:flex;align-items:center;justify-content:center;}
+.photo-wrap img{width:100%;height:100%;object-fit:cover;}
+.photo-initials{font-family:'Playfair Display',serif;font-size:64px;font-weight:700;color:var(--ink3);}
+.photo-badge{position:absolute;bottom:12px;right:12px;background:var(--sage);color:#fff;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;padding:5px 10px;border-radius:20px;letter-spacing:.04em;display:flex;align-items:center;gap:5px;}
+.badge-dot{width:5px;height:5px;background:#fff;border-radius:50%;animation:blink 1.8s infinite;}
+
+.hero-social{display:flex;gap:14px;}
+.social-btn{width:42px;height:42px;border:1px solid var(--line);background:var(--paper);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;color:var(--ink3);font-size:16px;text-decoration:none;}
+.social-btn:hover{border-color:var(--rust);color:var(--rust);transform:translateY(-2px);}
+
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.eyebrow-line{width:28px;height:1px;background:var(--rust);}
+.eyebrow-text{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;color:var(--rust);letter-spacing:.12em;text-transform:uppercase;}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,68px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:var(--ink);margin-bottom:6px;}
+.hero-name em{font-style:italic;color:var(--rust);}
+.hero-title{font-size:14px;font-weight:400;color:var(--ink3);margin-bottom:20px;letter-spacing:.01em;}
+.rtw-pill{display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;font-family:'Inter',sans-serif;font-size:10px;font-weight:500;padding:5px 13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px;border-radius:2px;}
+.rtw-dot{width:5px;height:5px;background:#fff;border-radius:50%;animation:blink 2s infinite;}
+.hero-bio{font-size:15.5px;color:var(--ink2);line-height:1.82;margin-bottom:32px;max-width:440px;}
+.hero-bio strong{color:var(--ink);font-weight:600;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.cta-main{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;background:var(--ink);color:#fff;border:none;padding:13px 30px;cursor:pointer;transition:background .2s,transform .15s;letter-spacing:.02em;}
+.cta-main:hover{background:var(--rust);transform:translateY(-1px);}
+.cta-cv{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;background:transparent;color:var(--rust);border:1px solid var(--rust);padding:13px 30px;cursor:pointer;transition:all .2s,transform .15s;letter-spacing:.02em;}
+.cta-cv:hover{background:var(--rust);color:#fff;transform:translateY(-1px);}
+.cta-sec{font-family:'Inter',sans-serif;font-size:13px;font-weight:400;background:transparent;color:var(--ink);border:1px solid var(--line);padding:13px 30px;cursor:pointer;transition:all .2s;}
+.cta-sec:hover{border-color:var(--ink3);}
+
+/* ── SECTIONS ── */
+section{padding:96px 64px;}
+.section-header{margin-bottom:52px;}
+.s-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink3);letter-spacing:.1em;margin-bottom:8px;}
+.s-heading{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,50px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:var(--ink);}
+.s-heading em{font-style:italic;color:var(--rust);}
+.s-sub{font-size:15px;color:var(--ink3);margin-top:10px;max-width:500px;line-height:1.75;}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.rv.vis{opacity:1;transform:none;}
+
+/* ── ABOUT ── */
+#about{background:var(--paper);}
+.about-cols{display:grid;grid-template-columns:3fr 2fr;gap:64px;align-items:start;}
+.about-body p{font-size:15.5px;color:var(--ink2);line-height:1.85;margin-bottom:18px;}
+.about-body p strong{color:var(--ink);font-weight:600;}
+.about-body p em{color:var(--rust);font-style:normal;font-weight:500;}
+.about-sidebar{display:flex;flex-direction:column;gap:0;}
+.si{padding:18px 0;border-bottom:1px solid var(--line);}
+.si:first-child{border-top:1px solid var(--line);}
+.si-label{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;}
+.si-val{font-size:13.5px;color:var(--ink);font-weight:500;}
+.si-sub{font-size:12px;color:var(--ink3);margin-top:2px;}
+
+/* ── SKILLS ── */
+#skills{background:var(--paper2);}
+.skills-list{display:flex;flex-direction:column;gap:0;}
+.skill-row{display:grid;grid-template-columns:200px 1fr;align-items:start;gap:36px;padding:24px 0;border-bottom:1px solid var(--line);}
+.skill-row:first-child{border-top:1px solid var(--line);}
+.sk-cat{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--ink);}
+.sk-items{font-size:14px;color:var(--ink2);line-height:1.85;}
+.sk-items strong{color:var(--rust);font-weight:500;}
+
+/* ── PROJECTS ── */
+#projects{background:var(--paper);}
+.proj-list{display:flex;flex-direction:column;gap:0;}
+.proj-item{display:grid;grid-template-columns:64px 1fr 24px;align-items:start;gap:32px;padding:36px 0;border-bottom:1px solid var(--line);transition:all .2s;}
+.proj-item:first-child{border-top:1px solid var(--line);}
+.proj-item:hover{background:var(--paper2);padding-left:16px;padding-right:16px;margin:0 -16px;}
+.proj-n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);letter-spacing:.06em;padding-top:3px;}
+.proj-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.01em;}
+.proj-desc{font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:12px;max-width:540px;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.ptag{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--ink3);border:1px solid var(--line);padding:3px 9px;letter-spacing:.03em;}
+.proj-metrics{display:flex;gap:16px;flex-wrap:wrap;}
+.pmet{font-size:12px;color:var(--sage);font-weight:500;display:flex;align-items:center;gap:4px;}
+.pmet::before{content:'↑';color:var(--rust);font-size:10px;}
+.proj-arr{font-size:18px;color:var(--line);transition:color .2s,transform .2s;align-self:center;}
+.proj-item:hover .proj-arr{color:var(--rust);transform:translateX(3px);}
+
+/* ── CERTIFICATIONS ── */
+#certifications{background:var(--paper2);}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:0;}
+.cert-card{background:var(--paper);padding:32px 28px;border-bottom:3px solid transparent;transition:border-color .3s,background .2s;}
+.cert-card:hover{border-color:var(--rust);background:var(--paper2);}
+.cert-icon{font-size:28px;margin-bottom:14px;display:block;}
+.cert-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:6px;line-height:1.3;}
+.cert-issuer{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--rust);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;}
+.cert-year{font-size:12px;color:var(--ink3);}
+.cert-desc{font-size:13px;color:var(--ink3);line-height:1.65;margin-top:10px;}
+
+/* ── EXPERIENCE ── */
+#experience{background:var(--paper);}
+.exp-list{display:flex;flex-direction:column;gap:0;}
+.exp-item{display:grid;grid-template-columns:180px 1fr;gap:44px;padding:36px 0;border-bottom:1px solid var(--line);}
+.exp-item:first-child{border-top:1px solid var(--line);}
+.exp-period{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink3);letter-spacing:.06em;line-height:1.6;margin-bottom:4px;}
+.exp-co{font-size:12px;color:var(--ink3);margin-top:4px;}
+.exp-role{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--ink);margin-bottom:14px;letter-spacing:-.01em;}
+.exp-pts{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.exp-pts li{font-size:13.5px;color:var(--ink2);line-height:1.7;padding-left:15px;position:relative;}
+.exp-pts li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:1px;background:var(--rust);}
+
+/* ── CONTACT ── */
+#contact{background:var(--ink);color:var(--paper);}
+#contact .s-num{color:rgba(250,250,247,.3);}
+#contact .s-heading{color:var(--paper);}
+#contact .s-heading em{color:var(--rust2);}
+#contact .s-sub{color:rgba(250,250,247,.5);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:52px;}
+
+/* Contact form */
+.contact-form{display:flex;flex-direction:column;gap:16px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-label{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(250,250,247,.4);letter-spacing:.1em;text-transform:uppercase;}
+.form-input,.form-textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--paper);font-family:'Inter',sans-serif;font-size:14px;padding:12px 16px;outline:none;transition:border-color .2s;font-weight:300;}
+.form-input::placeholder,.form-textarea::placeholder{color:rgba(250,250,247,.25);}
+.form-input:focus,.form-textarea:focus{border-color:rgba(212,118,79,.6);}
+.form-textarea{resize:vertical;min-height:120px;font-family:'Inter',sans-serif;}
+.form-submit{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;background:var(--rust2);color:#fff;border:none;padding:14px 32px;cursor:pointer;transition:background .2s,transform .15s;letter-spacing:.02em;align-self:flex-start;display:flex;align-items:center;gap:10px;}
+.form-submit:hover{background:var(--rust);transform:translateY(-1px);}
+.form-submit.sending{opacity:.7;pointer-events:none;}
+.form-note{font-size:12px;color:rgba(250,250,247,.3);margin-top:4px;}
+
+/* Contact right */
+.contact-right{display:flex;flex-direction:column;gap:0;}
+.cd-item{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.cd-item:first-child{border-top:1px solid rgba(255,255,255,.07);}
+.cd-label{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(250,250,247,.3);letter-spacing:.1em;text-transform:uppercase;}
+.cd-val{font-size:13px;color:rgba(250,250,247,.7);font-weight:400;}
+.cd-btn{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(250,250,247,.3);background:none;border:none;cursor:pointer;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;padding:4px 0;}
+.cd-btn:hover{color:var(--rust2);}
+
+.contact-socials{display:flex;gap:12px;margin-top:28px;}
+.c-social{width:40px;height:40px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;color:rgba(250,250,247,.4);font-size:15px;background:none;}
+.c-social:hover{border-color:var(--rust2);color:var(--rust2);}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:22px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.f-text{font-family:'Inter',sans-serif;font-size:11px;color:rgba(250,250,247,.25);letter-spacing:.02em;}
+.f-social{display:flex;gap:16px;}
+.f-soc-btn{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(250,250,247,.25);background:none;border:none;cursor:pointer;letter-spacing:.06em;transition:color .2s;}
+.f-soc-btn:hover{color:var(--rust2);}
+
+/* ── TOAST ── */
+#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--sage);color:#fff;font-family:'Inter',sans-serif;font-size:13px;padding:12px 24px;z-index:9999;transition:transform .3s cubic-bezier(.34,1.56,.64,1);pointer-events:none;white-space:nowrap;border-radius:2px;font-weight:500;}
+#toast.on{transform:translateX(-50%) translateY(0);}
+
+/* ── ANIMATIONS ── */
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ── MOBILE ── */
+@media(max-width:960px){
+  nav{padding:16px 24px;}
+  .nav-links{display:none;}
+  .hero{grid-template-columns:1fr;padding:100px 24px 60px;gap:40px;}
+  .hero::after{display:none;}
+  .hero-right{flex-direction:row;flex-wrap:wrap;justify-content:center;}
+  section{padding:72px 24px;}
+  .about-cols{grid-template-columns:1fr;gap:40px;}
+  .skill-row{grid-template-columns:1fr;gap:8px;}
+  .proj-item{grid-template-columns:1fr;gap:12px;}
+  .proj-n,.proj-arr{display:none;}
+  .exp-item{grid-template-columns:1fr;gap:8px;}
+  .contact-grid{grid-template-columns:1fr;gap:44px;}
+  .form-row{grid-template-columns:1fr;}
+  .cert-grid{grid-template-columns:1fr 1fr;}
+  footer{padding:18px 24px;flex-direction:column;text-align:center;}
+}
+@media(max-width:560px){
+  .cert-grid{grid-template-columns:1fr;}
+  .hero-name{font-size:40px;}
+}
+</style>
+</head>
+<body>
+
+<div id="toast">Copied!</div>
+
+<!-- NAV -->
+<nav>
+  <button class="logo-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Akash<span>.</span></button>
+  <ul class="nav-links">
+    <li><button onclick="go('about')">About</button></li>
+    <li><button onclick="go('skills')">Skills</button></li>
+    <li><button onclick="go('projects')">Projects</button></li>
+    <li><button onclick="go('certifications')">Certifications</button></li>
+    <li><button onclick="go('experience')">Experience</button></li>
+    <li><button onclick="go('contact')">Contact</button></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-cv" onclick="downloadCV()">Download CV</button>
+    <button class="nav-hire" onclick="go('contact')">Hire Me</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Senior Software Engineer</span>
+    </div>
+    <h1 class="hero-name">Akash<br><em>Mothukuri</em></h1>
+    <p class="hero-title">React Native · Full-Stack · AR/MR · Manchester, UK</p>
+    <p class="hero-bio">I build mobile and full-stack applications that real people use every day. One of my projects crossed <strong>1M+ downloads</strong>. I care about clean architecture, performance, and shipping things that actually work at scale.</p>
+    <div class="hero-ctas">
+      <button class="cta-main" onclick="go('projects')">See my work</button>
+      <button class="cta-cv" onclick="downloadCV()">Download CV</button>
+      <button class="cta-sec" onclick="go('contact')">Let's talk</button>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <!-- Profile Photo -->
+    <div class="photo-wrap">
+      <div class="photo-initials">AM</div>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="hero-social">
+      <a class="social-btn" title="LinkedIn" onclick="window.open('https://linkedin.com/in/akash-mothukuri-7b1bb6211','_blank','noopener')">in</a>
+      <a class="social-btn" title="GitHub" onclick="window.open('https://github.com/akashmothukuri','_blank','noopener')">gh</a>
+      <a class="social-btn" title="Email" onclick="window.location.href='mailto:mothukuriashok28@gmail.com'">@</a>
+      <a class="social-btn" title="Phone" onclick="window.location.href='tel:+447915059482'">☎</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <div class="s-num">01 / About</div>
+    <h2 class="s-heading">A bit about<br><em>who I am</em></h2>
+  </div>
+  <div class="about-cols">
+    <div class="about-body rv">
+      <p>I'm a Senior Software Engineer based in <strong>Manchester</strong>, originally from India. I moved to the UK to complete my <strong>MSc in Managing Innovation and IT at the University of Salford</strong> and have been building my career here since.</p>
+      <p>Over the past 5 years I've worked on everything from a <em>1M+ download food ordering app</em> to real-time AR social networking, fintech POS platforms, and community management tools. I've owned products end to end — architecture, build, testing, release management, the lot.</p>
+      <p>I work best on teams that care about <strong>what they ship and why</strong>. I'm comfortable doing deep technical work and equally comfortable in conversations with product owners and stakeholders when something needs explaining clearly.</p>
+      <p>Outside of work I'm genuinely interested in AR and mixed reality, what AI is doing to the way we write software, and building things that solve real problems for real people.</p>
+    </div>
+    <div class="about-sidebar rv">
+      <div class="si"><div class="si-label">Based in</div><div class="si-val">Manchester, England, UK</div><div class="si-sub">Remote & hybrid roles welcome</div></div>
+      <div class="si"><div class="si-label">Education</div><div class="si-val">MSc Managing Innovation & IT</div><div class="si-sub">University of Salford · 2024–2025</div></div>
+      <div class="si"><div class="si-label">Undergraduate</div><div class="si-val">B.Tech Computer Science</div><div class="si-sub">Vignan University · 2015–2019</div></div>
+      <div class="si"><div class="si-label">Right to Work</div><div class="si-val">Full UK right to work</div><div class="si-sub">No sponsorship needed</div></div>
+      <div class="si"><div class="si-label">Open to</div><div class="si-val">Senior / Lead roles</div><div class="si-sub">Full-time or freelance · UK</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <div class="s-num">02 / Skills</div>
+    <h2 class="s-heading">What I<br><em>work with</em></h2>
+    <p class="s-sub">Five years of hands-on experience across the full stack — from React Native on mobile to AWS in the cloud.</p>
+  </div>
+  <div class="skills-list rv">
+    <div class="skill-row"><div class="sk-cat">Mobile Development</div><div class="sk-items">React Native, TypeScript, Redux, Context API, Reanimated, FlashList, React Hook Form, <strong>iOS & Android</strong>, WCAG 2.1 Accessibility</div></div>
+    <div class="skill-row"><div class="sk-cat">Frontend & Web</div><div class="sk-items">React.js, Next.js, TypeScript, JavaScript, HTML, CSS, Responsive UI, Component architecture</div></div>
+    <div class="skill-row"><div class="sk-cat">Backend & APIs</div><div class="sk-items">Node.js, Python, Django, REST APIs, GraphQL (Apollo), MongoDB, Firebase, <strong>AWS</strong>, Java, SpringBoot, SQL</div></div>
+    <div class="skill-row"><div class="sk-cat">Testing & DevOps</div><div class="sk-items">TDD (<strong>80%+ coverage</strong>), Jest, React Testing Library, CI/CD, Fastlane, GitHub Actions, Git, Automated integration testing</div></div>
+    <div class="skill-row"><div class="sk-cat">Emerging Tech</div><div class="sk-items">Google ARCore, Augmented Reality, Mixed Reality, Blockchain integrations, Real-time GPS & Bluetooth proximity detection</div></div>
+    <div class="skill-row"><div class="sk-cat">AI-Assisted Dev</div><div class="sk-items">Claude, GitHub Copilot, Codex, Chain-of-thought prompting, AI pair programming, Automated test generation, PR summarisation</div></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <div class="s-num">03 / Projects</div>
+    <h2 class="s-heading">Things I've<br><em>actually built</em></h2>
+    <p class="s-sub">Not side projects — production systems used by real people, at scale.</p>
+  </div>
+  <div class="proj-list">
+    <div class="proj-item rv">
+      <div class="proj-n">01</div>
+      <div class="proj-body">
+        <div class="proj-name">Tropical Smoothie Cafe® — 1M+ Downloads</div>
+        <p class="proj-desc">One of the most-downloaded food ordering apps in the US. I built the ordering flow, Tropic Rewards® loyalty system, offline order support, and custom animations. Shipping something used by hundreds of thousands of people daily teaches you things no side project ever can.</p>
+        <div class="proj-tags"><span class="ptag">React Native</span><span class="ptag">TypeScript</span><span class="ptag">Firebase</span><span class="ptag">Redux</span><span class="ptag">Reanimated</span><span class="ptag">Lottie</span></div>
+        <div class="proj-metrics"><span class="pmet">1M+ Downloads</span><span class="pmet">Order success +10%</span><span class="pmet">Responsiveness +20%</span></div>
+      </div>
+      <div class="proj-arr">→</div>
+    </div>
+    <div class="proj-item rv">
+      <div class="proj-n">02</div>
+      <div class="proj-body">
+        <div class="proj-name">Fintech POS & Payments Platform</div>
+        <p class="proj-desc">Greenfield fintech platform for high-frequency point-of-sale environments. I designed the architecture, built the transaction workflows, handled secure API integrations with retry logic, and owned delivery end to end. High concurrency, low tolerance for failure.</p>
+        <div class="proj-tags"><span class="ptag">React Native</span><span class="ptag">Node.js</span><span class="ptag">AWS</span><span class="ptag">MongoDB</span><span class="ptag">Redux</span><span class="ptag">REST APIs</span></div>
+        <div class="proj-metrics"><span class="pmet">10,000+ concurrent users</span><span class="pmet">99.8% uptime</span><span class="pmet">API speed +25%</span></div>
+      </div>
+      <div class="proj-arr">→</div>
+    </div>
+    <div class="proj-item rv">
+      <div class="proj-n">03</div>
+      <div class="proj-body">
+        <div class="proj-name">Tiluf — Augmented Reality Social App</div>
+        <p class="proj-desc">AR social app showing nearby users as real-time data overlays in your physical environment using Google ARCore. I built Bluetooth and GPS proximity detection and integrated blockchain-verified profiles. One of the more technically ambitious things I've shipped.</p>
+        <div class="proj-tags"><span class="ptag">React Native</span><span class="ptag">Google ARCore</span><span class="ptag">Python</span><span class="ptag">Firebase</span><span class="ptag">Blockchain</span></div>
+        <div class="proj-metrics"><span class="pmet">Connection time -40%</span><span class="pmet">Engagement +25%</span></div>
+      </div>
+      <div class="proj-arr">→</div>
+    </div>
+    <div class="proj-item rv">
+      <div class="proj-n">04</div>
+      <div class="proj-body">
+        <div class="proj-name">Coral — Community Management Platform</div>
+        <p class="proj-desc">Full-stack community platform consolidating Slack, WhatsApp, Telegram, and Discord into one real-time dashboard. I was the sole tech lead — designed the architecture, built web and mobile apps and the backend, managed AWS deployment, and shipped to Google Play Store.</p>
+        <div class="proj-tags"><span class="ptag">React</span><span class="ptag">React Native</span><span class="ptag">Java</span><span class="ptag">SpringBoot</span><span class="ptag">AWS</span><span class="ptag">Firebase</span></div>
+        <div class="proj-metrics"><span class="pmet">4 platforms unified</span><span class="pmet">Zero to production</span></div>
+      </div>
+      <div class="proj-arr">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-header">
+    <div class="s-num">04 / Certifications</div>
+    <h2 class="s-heading">Credentials &<br><em>education</em></h2>
+    <p class="s-sub">Formal qualifications and continuous learning alongside 5 years of production experience.</p>
+  </div>
+  <div class="cert-grid rv">
+    <div class="cert-card">
+      <span class="cert-icon">🎓</span>
+      <div class="cert-name">MSc Managing Innovation and Information Technology</div>
+      <div class="cert-issuer">University of Salford</div>
+      <div class="cert-year">2024 – 2025 · Manchester, UK</div>
+      <p class="cert-desc">Strategic and systems thinking applied to technology-driven innovation. Complemented 5 years of engineering experience with business and leadership context.</p>
+    </div>
+    <div class="cert-card">
+      <span class="cert-icon">🎓</span>
+      <div class="cert-name">B.Tech Computer Science and Engineering</div>
+      <div class="cert-issuer">Vignan University</div>
+      <div class="cert-year">2015 – 2019 · India</div>
+      <p class="cert-desc">Core computer science fundamentals — algorithms, data structures, software engineering principles, and systems design.</p>
+    </div>
+    <div class="cert-card">
+      <span class="cert-icon">📱</span>
+      <div class="cert-name">React Native — Production Experience</div>
+      <div class="cert-issuer">5 Years Commercial</div>
+      <div class="cert-year">2019 – Present</div>
+      <p class="cert-desc">Shipped React Native apps to 1M+ users across iOS and Android. Deep expertise in performance, offline architecture, state management, and CI/CD release management.</p>
+    </div>
+    <div class="cert-card">
+      <span class="cert-icon">☁️</span>
+      <div class="cert-name">AWS Cloud — Production Deployment</div>
+      <div class="cert-issuer">Hands-on Enterprise Experience</div>
+      <div class="cert-year">2020 – Present</div>
+      <p class="cert-desc">Deployed and managed cloud infrastructure on AWS supporting 10,000+ concurrent users at 99.8% uptime across consumer and fintech platforms.</p>
+    </div>
+    <div class="cert-card">
+      <span class="cert-icon">🥽</span>
+      <div class="cert-name">Augmented Reality Development</div>
+      <div class="cert-issuer">Google ARCore — Shipped to Production</div>
+      <div class="cert-year">2020 – 2021</div>
+      <p class="cert-desc">Built and shipped Tiluf — a real-world AR social networking app using Google ARCore with real-time proximity detection and blockchain integration.</p>
+    </div>
+    <div class="cert-card">
+      <span class="cert-icon">🤖</span>
+      <div class="cert-name">AI-Native Development</div>
+      <div class="cert-issuer">Claude · GitHub Copilot · Codex</div>
+      <div class="cert-year">2023 – Present</div>
+      <p class="cert-desc">Daily use of AI pair-programming tools for chain-of-thought architecture prompting, automated test generation, and PR summarisation to accelerate delivery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <div class="s-num">05 / Experience</div>
+    <h2 class="s-heading">Where I've<br><em>worked</em></h2>
+  </div>
+  <div class="exp-list">
+    <div class="exp-item rv">
+      <div><div class="exp-period">Jun 2022 – Aug 2024</div><div class="exp-co">GYSBOX TEAMWORKS<br>Hyderabad, India</div></div>
+      <div><div class="exp-role">Senior React Native Engineer</div>
+        <ul class="exp-pts">
+          <li>Led architecture and delivery of greenfield fintech POS platform — 10,000+ concurrent users at 99.8% uptime</li>
+          <li>Cut API response times by 25% and reduced production defects by 25% through TDD with 80%+ coverage</li>
+          <li>Shipped offline support and Firebase push notifications — user retention up 15%</li>
+          <li>Managed iOS and Android releases via Fastlane and GitHub Actions CI/CD</li>
+          <li>Mentored junior engineers through code reviews and architecture guidance</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item rv">
+      <div><div class="exp-period">Sep 2021 – Jun 2022</div><div class="exp-co">GYSBOX TEAMWORKS<br>Hyderabad, India</div></div>
+      <div><div class="exp-role">React Native Developer</div>
+        <ul class="exp-pts">
+          <li>Contributed to Tropical Smoothie Cafe® — 1M+ download consumer app used daily across the US</li>
+          <li>Built ordering flow, Tropic Rewards® loyalty system, and offline support end to end</li>
+          <li>Custom animations with Reanimated and Lottie improved responsiveness by 20%</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item rv">
+      <div><div class="exp-period">Jan 2020 – Sep 2021</div><div class="exp-co">GYSBOX / AQubitas<br>Hyderabad, India</div></div>
+      <div><div class="exp-role">Full Stack Engineer</div>
+        <ul class="exp-pts">
+          <li>Sole tech lead on Coral — designed architecture, built full stack, shipped to Google Play Store</li>
+          <li>Built Tiluf AR app using Google ARCore — proximity detection cut connection time by 40%</li>
+          <li>Owned React, React Native, Python, Java/SpringBoot, AWS, and Firebase across both products</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item rv">
+      <div><div class="exp-period">Jul 2019 – Jan 2020</div><div class="exp-co">Kanaxis Software Solutions<br>Hyderabad, India</div></div>
+      <div><div class="exp-role">Full Stack Engineer</div>
+        <ul class="exp-pts">
+          <li>Built SOMA (European luxury watches e-commerce) and EduYep (student social platform) end to end</li>
+          <li>Improved API performance by 20% through MongoDB query optimisation and backend refactoring</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <div class="s-num">06 / Contact</div>
+    <h2 class="s-heading">Got a role<br><em>in mind?</em></h2>
+    <p class="s-sub">Open to Senior and Lead roles in React Native, full-stack, and AR/MR. Remote, hybrid, or on-site across the UK.</p>
+  </div>
+  <div class="contact-grid">
+
+    <!-- CONTACT FORM -->
+    <div class="rv">
+      <form class="contact-form" onsubmit="handleForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Your name</label>
+            <input class="form-input" type="text" placeholder="Jane Smith" required id="f-name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your email</label>
+            <input class="form-input" type="email" placeholder="jane@company.com" required id="f-email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company / Organisation</label>
+          <input class="form-input" type="text" placeholder="Company name" id="f-company">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <input class="form-input" type="text" placeholder="Senior React Native role — remote" required id="f-subject">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell me about the role or project..." required id="f-message"></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="f-submit">
+          Send message <span>→</span>
+        </button>
+        <p class="form-note">Or email directly: mothukuriashok28@gmail.com</p>
+      </form>
+    </div>
+
+    <!-- CONTACT DETAILS -->
+    <div class="contact-right rv">
+      <div class="cd-item"><span class="cd-label">Email</span><span class="cd-val">mothukuriashok28@gmail.com</span><button class="cd-btn" onclick="copyEmail()">Copy</button></div>
+      <div class="cd-item"><span class="cd-label">Phone</span><span class="cd-val">+44 7915 059482</span><button class="cd-btn" onclick="window.location.href='tel:+447915059482'">Call</button></div>
+      <div class="cd-item"><span class="cd-label">LinkedIn</span><span class="cd-val">akash-mothukuri-7b1bb6211</span><button class="cd-btn" onclick="window.open('https://linkedin.com/in/akash-mothukuri-7b1bb6211','_blank','noopener')">Open</button></div>
+      <div class="cd-item"><span class="cd-label">GitHub</span><span class="cd-val">github.com/akashmothukuri</span><button class="cd-btn" onclick="window.open('https://github.com/akashmothukuri','_blank','noopener')">Open</button></div>
+      <div class="cd-item"><span class="cd-label">Location</span><span class="cd-val">Manchester, UK</span><span class="cd-label">Remote OK</span></div>
+      <div class="cd-item"><span class="cd-label">Right to Work</span><span class="cd-val">Full UK — No sponsorship</span></div>
+      <div class="cd-item"><span class="cd-label">Availability</span><span class="cd-val">Immediately</span></div>
+
+      <div class="contact-socials">
+        <button class="c-social" title="LinkedIn" onclick="window.open('https://linkedin.com/in/akash-mothukuri-7b1bb6211','_blank','noopener')">in</button>
+        <button class="c-social" title="GitHub" onclick="window.open('https://github.com/akashmothukuri','_blank','noopener')">gh</button>
+        <button class="c-social" title="Email" onclick="window.location.href='mailto:mothukuriashok28@gmail.com'">@</button>
+        <button class="c-social" title="Download CV" onclick="downloadCV()">cv</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-text">© 2026 Akash Mothukuri · Manchester, UK · Right to Work in the UK</div>
+  <div class="f-social">
+    <button class="f-soc-btn" onclick="window.open('https://linkedin.com/in/akash-mothukuri-7b1bb6211','_blank','noopener')">LinkedIn</button>
+    <button class="f-soc-btn" onclick="window.open('https://github.com/akashmothukuri','_blank','noopener')">GitHub</button>
+    <button class="f-soc-btn" onclick="window.location.href='mailto:mothukuriashok28@gmail.com'">Email</button>
+    <button class="f-soc-btn" onclick="downloadCV()">Download CV</button>
+  </div>
+</footer>
+
+<script>
+// Scroll to section
+function go(id){
+  const el=document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// Download CV — points to hosted PDF
+function downloadCV(){
+  window.open('/AkashMothukuri_CV.pdf','_blank','noopener');
+}
+
+// Copy email
+function copyEmail(){
+  const email='mothukuriashok28@gmail.com';
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(email).then(()=>showToast('Email copied!')).catch(()=>fallback(email));
+  } else { fallback(email); }
+}
+function fallback(text){
+  const ta=document.createElement('textarea');
+  ta.value=text; ta.style.cssText='position:fixed;opacity:0;top:0;left:0;';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{document.execCommand('copy');showToast('Email copied!');}catch(e){}
+  document.body.removeChild(ta);
+}
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg||'Copied!';
+  t.classList.add('on');
+  setTimeout(()=>t.classList.remove('on'),3000);
+}
+
+// Contact form handler
+function handleForm(e){
+  e.preventDefault();
+  const btn=document.getElementById('f-submit');
+  const name=document.getElementById('f-name').value;
+  const email=document.getElementById('f-email').value;
+  const company=document.getElementById('f-company').value;
+  const subject=document.getElementById('f-subject').value;
+  const message=document.getElementById('f-message').value;
+
+  btn.textContent='Sending...';
+  btn.classList.add('sending');
+
+  // Opens email client with pre-filled content
+  const body=`Hi Akash,%0A%0AMy name is ${encodeURIComponent(name)} from ${encodeURIComponent(company||'—')}.%0A%0A${encodeURIComponent(message)}%0A%0ABest regards,%0A${encodeURIComponent(name)}%0A${encodeURIComponent(email)}`;
+  window.location.href=`mailto:mothukuriashok28@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+  setTimeout(()=>{
+    btn.innerHTML='Message sent! ✓';
+    btn.style.background='var(--sage)';
+    showToast('Opening your email client...');
+    setTimeout(()=>{
+      btn.innerHTML='Send message <span>→</span>';
+      btn.style.background='';
+      btn.classList.remove('sending');
+    },4000);
+  },800);
+}
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*70);obs.unobserve(e.target);}
+  });
+},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// Active nav
+const secs=document.querySelectorAll('section[id]');
+const btns=document.querySelectorAll('.nav-links button');
+const ids=['about','skills','projects','certifications','experience','contact'];
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});
+  btns.forEach((b,i)=>b.classList.toggle('active',ids[i]===cur));
+},{passive:true});
+</script>
+</body>
+</html>
