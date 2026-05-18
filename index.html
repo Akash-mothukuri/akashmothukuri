@@ -542,9 +542,15 @@ function go(id){
   if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
-// Download CV — points to hosted PDF
+// Download CV
 function downloadCV(){
-  window.open('/AkashMothukuri_CV.pdf','_blank','noopener');
+  const link=document.createElement('a');
+  link.href='AkashMothukuri_CV.pdf';
+  link.download='AkashMothukuri_CV.pdf';
+  link.target='_blank';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 // Copy email
