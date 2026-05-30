@@ -306,7 +306,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     <div class="skill-row"><div class="sk-cat">Frontend & Web</div><div class="sk-items">React.js, Next.js, TypeScript, JavaScript, HTML, CSS, Responsive UI, Component architecture</div></div>
     <div class="skill-row"><div class="sk-cat">Backend & APIs</div><div class="sk-items">Node.js, Python, Django, REST APIs, GraphQL (Apollo), MongoDB, Firebase, <strong>AWS</strong>, Java, SpringBoot, SQL</div></div>
     <div class="skill-row"><div class="sk-cat">Testing & DevOps</div><div class="sk-items">TDD (<strong>80%+ coverage</strong>), Jest, React Testing Library, CI/CD, Fastlane, GitHub Actions, Git, Automated integration testing</div></div>
-    <div class="skill-row"><div class="sk-cat">Emerging Tech</div><div class="sk-items">Google ARCore, Augmented Reality, Mixed Reality, Blockchain integrations, Real-time GPS & Bluetooth proximity detection</div></div>
+    <div class="skill-row"><div class="sk-cat">Emerging Tech</div><div class="sk-items">Google ARCore, ARKit, Augmented Reality, Mixed Reality, Blockchain integrations, Real-time GPS & Bluetooth proximity detection</div></div>
     <div class="skill-row"><div class="sk-cat">AI-Assisted Dev</div><div class="sk-items">Claude, GitHub Copilot, Codex, Chain-of-thought prompting, AI pair programming, Automated test generation, PR summarisation</div></div>
   </div>
 </section>
@@ -323,29 +323,39 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
       <div class="proj-n">01</div>
       <div class="proj-body">
         <div class="proj-name">Tropical Smoothie Cafe® — 1M+ Downloads</div>
-        <p class="proj-desc">One of the most-downloaded food ordering apps in the US. I built the ordering flow, Tropic Rewards® loyalty system, offline order support, and custom animations. Shipping something used by hundreds of thousands of people daily teaches you things no side project ever can.</p>
+        <p class="proj-desc">One of the most-downloaded food ordering apps in the US. As part of the development team, I contributed to the ordering flow, Tropic Rewards® loyalty system, offline order support, and custom animations. Shipping something used by hundreds of thousands of people daily teaches you things no side project ever can.</p>
         <div class="proj-tags"><span class="ptag">React Native</span><span class="ptag">TypeScript</span><span class="ptag">Firebase</span><span class="ptag">Redux</span><span class="ptag">Reanimated</span><span class="ptag">Lottie</span></div>
         <div class="proj-metrics"><span class="pmet">1M+ Downloads</span><span class="pmet">Order success +10%</span><span class="pmet">Responsiveness +20%</span></div>
+        <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <button class="pc-btn" onclick="window.open('https://apps.apple.com/us/app/tropical-smoothie-cafe/id1090954847','_blank','noopener')">App Store →</button>
+          <button class="pc-btn" onclick="window.open('https://play.google.com/store/apps/details?id=com.tropicalsmoothiecafe.app','_blank','noopener')">Play Store →</button>
+        </div>
       </div>
       <div class="proj-arr">→</div>
     </div>
     <div class="proj-item rv">
       <div class="proj-n">02</div>
       <div class="proj-body">
-        <div class="proj-name">Fintech POS & Payments Platform</div>
-        <p class="proj-desc">Greenfield fintech platform for high-frequency point-of-sale environments. I designed the architecture, built the transaction workflows, handled secure API integrations with retry logic, and owned delivery end to end. High concurrency, low tolerance for failure.</p>
-        <div class="proj-tags"><span class="ptag">React Native</span><span class="ptag">Node.js</span><span class="ptag">AWS</span><span class="ptag">MongoDB</span><span class="ptag">Redux</span><span class="ptag">REST APIs</span></div>
-        <div class="proj-metrics"><span class="pmet">10,000+ concurrent users</span><span class="pmet">99.8% uptime</span><span class="pmet">API speed +25%</span></div>
+        <div class="proj-name">Zeller — Fintech POS & Payments Platform <span style="font-size:11px;background:#B85C38;color:#fff;padding:3px 10px;border-radius:20px;font-family:'Inter',sans-serif;font-weight:500;vertical-align:middle;margin-left:8px;">Client Project</span></div>
+        <p class="proj-desc">Built the mobile POS and payments platform for Zeller — a fintech company trusted by 100,000+ businesses across the UK including Dominos and Baskin Robbins. Designed the architecture, built transaction workflows, secure API integrations with retry logic, and owned delivery end to end. High concurrency, zero tolerance for failure.</p>
+        <div class="proj-tags"><span class="ptag">React Native</span><span class="ptag">Node.js</span><span class="ptag">AWS</span><span class="ptag">MongoDB</span><span class="ptag">Redux</span><span class="ptag">REST APIs</span><span class="ptag">Fintech</span></div>
+        <div class="proj-metrics"><span class="pmet">100,000+ businesses</span><span class="pmet">10,000+ concurrent users</span><span class="pmet">99.8% uptime</span><span class="pmet">API speed +25%</span></div>
+        <div style="display:flex;gap:10px;margin-top:8px;">
+          <button class="pc-btn" onclick="window.open('https://www.myzeller.com/gb','_blank','noopener')">Visit Zeller →</button>
+        </div>
       </div>
       <div class="proj-arr">→</div>
     </div>
     <div class="proj-item rv">
       <div class="proj-n">03</div>
       <div class="proj-body">
-        <div class="proj-name">Tiluf — Augmented Reality Social App</div>
-        <p class="proj-desc">AR social app showing nearby users as real-time data overlays in your physical environment using Google ARCore. I built Bluetooth and GPS proximity detection and integrated blockchain-verified profiles. One of the more technically ambitious things I've shipped.</p>
-        <div class="proj-tags"><span class="ptag">React Native</span><span class="ptag">Google ARCore</span><span class="ptag">Python</span><span class="ptag">Firebase</span><span class="ptag">Blockchain</span></div>
+        <div class="proj-name">Tiluf — Augmented Reality Social Network</div>
+        <p class="proj-desc">AR social app showing nearby users as real-time data overlays in your physical environment using Google ARCore and ARKit. Built Bluetooth and GPS proximity detection and blockchain-verified profiles. Connect with people around you by seeing their name and interests displayed above them in Augmented Reality.</p>
+        <div class="proj-tags"><span class="ptag">React Native</span><span class="ptag">Google ARCore</span><span class="ptag">ARKit</span><span class="ptag">Python</span><span class="ptag">Firebase</span><span class="ptag">Blockchain</span><span class="ptag">GPS/BT</span></div>
         <div class="proj-metrics"><span class="pmet">Connection time -40%</span><span class="pmet">Engagement +25%</span></div>
+        <div style="display:flex;gap:10px;margin-top:8px;">
+          <button class="pc-btn" onclick="window.open('http://www.tiluf.com','_blank','noopener')">Visit Website →</button>
+        </div>
       </div>
       <div class="proj-arr">→</div>
     </div>
