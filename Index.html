@@ -184,50 +184,74 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
 .f-soc-btn{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(250,250,247,.25);background:none;border:none;cursor:pointer;letter-spacing:.06em;transition:color .2s;}
 .f-soc-btn:hover{color:var(--rust2);}
 
-/* ── PROJECT MODAL ── */
-.modal-overlay{position:fixed;inset:0;background:rgba(28,28,26,0.92);z-index:500;display:flex;align-items:flex-start;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;overflow-y:auto;padding:40px 20px;}
-.modal-overlay.open{opacity:1;pointer-events:all;}
-.modal-box{background:var(--paper);width:100%;max-width:860px;position:relative;transform:translateY(30px);transition:transform .3s ease;margin:auto;}
-.modal-overlay.open .modal-box{transform:translateY(0);}
-.modal-header{padding:40px 48px 32px;border-bottom:1px solid var(--line);position:relative;}
-
-.modal-badges{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
-.modal-badge{font-family:'JetBrains Mono',monospace;font-size:10px;padding:4px 12px;letter-spacing:.06em;text-transform:uppercase;}
-.modal-badge.live{background:var(--sage);color:#fff;}
-.modal-badge.client{background:var(--rust);color:#fff;}
-.modal-badge.own{background:var(--ink);color:#fff;}
-.modal-badge.startup{background:#7C3AED;color:#fff;}
-.modal-title{font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,34px);font-weight:700;color:var(--ink);line-height:1.1;letter-spacing:-.02em;}
-.modal-body{padding:40px 48px;}
-.modal-section{margin-bottom:32px;}
-.modal-section-title{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--rust);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
-.modal-section-title::after{content:'';flex:1;height:1px;background:var(--line);}
-.modal-text{font-size:15px;color:var(--ink2);line-height:1.85;}
-.modal-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:8px;}
-.modal-list li{font-size:14.5px;color:var(--ink2);line-height:1.7;padding-left:20px;position:relative;}
-.modal-list li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:1px;background:var(--rust);}
-.modal-tags{display:flex;flex-wrap:wrap;gap:8px;}
-.modal-tag{font-family:'JetBrains Mono',monospace;font-size:10px;border:1px solid var(--line);color:var(--ink3);padding:5px 12px;letter-spacing:.04em;}
-.modal-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
-.modal-metric{background:var(--paper2);padding:16px 20px;border-left:3px solid var(--rust);}
+/* ── MODAL ── */
+.modal-overlay{
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,0.8);
+  z-index:9000;
+  display:none;
+  overflow-y:auto;
+  padding:40px 20px;
+  -webkit-overflow-scrolling:touch;
+}
+.modal-overlay.active{display:block;}
+.modal-box{
+  background:var(--paper);
+  color:var(--ink);
+  width:100%;
+  max-width:760px;
+  margin:0 auto;
+  border-radius:4px;
+  position:relative;
+}
+.modal-header{
+  padding:36px 40px 24px;
+  border-bottom:1px solid var(--line);
+}
+.modal-close{
+  position:absolute;
+  top:16px;right:20px;
+  width:36px;height:36px;
+  background:var(--paper3);
+  border:none;
+  border-radius:50%;
+  font-size:18px;
+  color:var(--ink);
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  z-index:10;
+  line-height:1;
+}
+.modal-close:hover{background:var(--rust);color:#fff;}
+.modal-type{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--rust);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;}
+.modal-title{font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,32px);font-weight:700;line-height:1.1;letter-spacing:-.01em;color:var(--ink);margin-bottom:12px;}
+.modal-badges{display:flex;gap:8px;flex-wrap:wrap;}
+.modal-badge{font-family:'JetBrains Mono',monospace;font-size:10px;padding:4px 12px;border-radius:20px;letter-spacing:.06em;}
+.modal-body{padding:32px 40px;}
+.modal-section{margin-bottom:28px;}
+.modal-section-title{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--line);}
+.modal-text{font-size:15px;color:var(--ink2);line-height:1.8;}
+.modal-features{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.modal-features li{font-size:14px;color:var(--ink2);padding-left:18px;position:relative;line-height:1.65;}
+.modal-features li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:1px;background:var(--rust);}
+.modal-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.modal-tag{font-family:'JetBrains Mono',monospace;font-size:10px;border:1px solid var(--line);color:var(--ink3);padding:4px 10px;letter-spacing:.03em;}
+.modal-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;}
+.modal-metric{background:var(--paper2);padding:16px;border-left:3px solid var(--rust);}
 .modal-metric-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ink);line-height:1;}
 .modal-metric-label{font-size:11px;color:var(--ink3);margin-top:4px;letter-spacing:.04em;}
-.modal-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
-.modal-link-btn{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;padding:12px 24px;cursor:pointer;transition:all .2s;letter-spacing:.02em;border:none;}
-.modal-link-btn.primary{background:var(--ink);color:#fff;}
-.modal-link-btn.primary:hover{background:var(--rust);}
-.modal-link-btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--line);}
-.modal-link-btn.secondary:hover{border-color:var(--rust);color:var(--rust);}
-.proj-item{cursor:pointer;}
-.proj-item:hover .proj-name{color:var(--rust);transition:color .2s;}
-@media(max-width:600px){.modal-header{padding:24px 20px 18px;}.modal-body{padding:24px 20px;}.modal-metrics{grid-template-columns:1fr 1fr;}}
+.modal-links{display:flex;gap:12px;flex-wrap:wrap;padding:24px 40px;border-top:1px solid var(--line);background:var(--paper2);}
+.modal-link-btn{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;background:var(--ink);color:#fff;border:none;padding:12px 28px;cursor:pointer;transition:background .2s;}
+.modal-link-btn:hover{background:var(--rust);}
+.modal-link-btn.outline{background:transparent;color:var(--ink);border:1px solid var(--line);}
+.modal-link-btn.outline:hover{border-color:var(--rust);color:var(--rust);}
+@media(max-width:600px){
+  .modal-header,.modal-body{padding:24px 20px;}
+  .modal-links{padding:20px;}
+  .modal-metrics{grid-template-columns:1fr 1fr;}
+}
 
-/* ── PROJECT MODAL ── */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:500;display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s ease;}
-.modal-box{background:var(--paper);color:var(--ink);width:100%;max-width:780px;max-height:90vh;overflow-y:auto;border-radius:4px;position:relative;scrollbar-width:thin;}
-.modal-header{padding:36px 40px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:1;}
-.modal-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:22px;color:var(--ink3);cursor:pointer;transition:color .2s;line-height:1;padding:4px 8px;z-index:10;}
-.modal-close:hover{color:var(--rust);}
+
 .read-more-hint{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--rust);letter-spacing:.08em;text-transform:uppercase;}
 .modal-type{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--rust);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;}
 .modal-title{font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,32px);font-weight:700;line-height:1.1;letter-spacing:-.01em;color:var(--ink);margin-bottom:12px;}
@@ -972,367 +996,4 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
 </div>
 
 <script>
-// ── MODAL SYSTEM ─────────────────────────────────────
-function openModal(id){
-  var el = document.getElementById(id);
-  if(!el) return;
-  el.style.display = 'flex';
-  setTimeout(function(){ el.style.opacity = '1'; }, 10);
-  document.body.style.overflow = 'hidden';
-}
 
-function closeModal(id){
-  var el = document.getElementById(id);
-  if(!el) return;
-  el.style.opacity = '0';
-  setTimeout(function(){ el.style.display = 'none'; }, 300);
-  document.body.style.overflow = '';
-}
-
-// Close on overlay background click
-document.addEventListener('click', function(e){
-  if(e.target && e.target.classList.contains('modal-overlay')){
-    e.target.style.opacity = '0';
-    setTimeout(function(){ e.target.style.display = 'none'; }, 300);
-    document.body.style.overflow = '';
-  }
-});
-
-// Close on Escape
-document.addEventListener('keydown', function(e){
-  if(e.key === 'Escape'){
-    document.querySelectorAll('.modal-overlay').forEach(function(m){
-      if(m.style.display === 'flex'){
-        m.style.opacity = '0';
-        setTimeout(function(){ m.style.display = 'none'; }, 300);
-      }
-    });
-    document.body.style.overflow = '';
-  }
-});
-</script>
-  const el=document.getElementById(id);
-  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-}
-
-// Download CV
-function downloadCV(){
-  const link=document.createElement('a');
-  link.href='AkashMothukuri_CV.pdf';
-  link.download='AkashMothukuri_CV.pdf';
-  link.target='_blank';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
-// Copy email
-function copyEmail(){
-  const email='mothukuriashok28@gmail.com';
-  if(navigator.clipboard&&navigator.clipboard.writeText){
-    navigator.clipboard.writeText(email).then(()=>showToast('Email copied!')).catch(()=>fallback(email));
-  } else { fallback(email); }
-}
-function fallback(text){
-  const ta=document.createElement('textarea');
-  ta.value=text; ta.style.cssText='position:fixed;opacity:0;top:0;left:0;';
-  document.body.appendChild(ta); ta.focus(); ta.select();
-  try{document.execCommand('copy');showToast('Email copied!');}catch(e){}
-  document.body.removeChild(ta);
-}
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg||'Copied!';
-  t.classList.add('on');
-  setTimeout(()=>t.classList.remove('on'),3000);
-}
-
-// Contact form — Formspree direct submission
-function handleForm(e){
-  e.preventDefault();
-  const form = document.getElementById('contact-form');
-  const btn = document.getElementById('f-submit');
-  const successMsg = document.getElementById('form-success');
-
-  // Show sending state
-  btn.innerHTML = 'Sending... <span>⟳</span>';
-  btn.classList.add('sending');
-
-  // Get form data
-  const formData = {
-    name: document.getElementById('f-name').value,
-    email: document.getElementById('f-email').value,
-    company: document.getElementById('f-company').value,
-    subject: document.getElementById('f-subject').value,
-    message: document.getElementById('f-message').value,
-  };
-
-  // Submit to Formspree — replace FORMSPREE_ID with your actual ID
-  fetch('https://formspree.io/f/meedelkj', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify(formData),
-  })
-  .then(response => {
-    if (response.ok) {
-      form.style.display = 'none';
-      successMsg.style.display = 'block';
-      showToast('Message sent successfully!');
-    } else {
-      throw new Error('Form submission failed');
-    }
-  })
-  .catch(() => {
-    btn.innerHTML = 'Send message <span>→</span>';
-    btn.classList.remove('sending');
-    showToast('Something went wrong — please email directly');
-  });
-}
-
-// Scroll reveal
-// Scroll reveal — add animate class first, then trigger on scroll
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach((e,i)=>{
-    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*70);obs.unobserve(e.target);}
-  });
-},{threshold:0.08});
-document.querySelectorAll('.rv').forEach(el=>{
-  // Only animate elements not already in viewport
-  const rect=el.getBoundingClientRect();
-  if(rect.top > window.innerHeight){
-    el.classList.add('animate');
-    obs.observe(el);
-  }
-});
-
-// Active nav
-const secs=document.querySelectorAll('section[id]');
-const btns=document.querySelectorAll('.nav-links button');
-const ids=['about','skills','projects','certifications','experience','contact'];
-window.addEventListener('scroll',()=>{
-  let cur='';
-  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});
-  btns.forEach((b,i)=>b.classList.toggle('active',ids[i]===cur));
-},{passive:true});
-</script>
-<!-- PROJECT DETAIL MODAL -->
-
-<script>
-// ── PROJECT DATA ──────────────────────────────────────
-const projects = {
-  tropical: {
-    title: "Tropical Smoothie Cafe®",
-    badges: [{label:"1M+ Downloads",cls:"live"},{label:"Client Project",cls:"client"}],
-    overview: "Tropical Smoothie Cafe® is one of the most-downloaded food ordering apps in the United States, serving hundreds of thousands of active customers daily across the country. The app allows customers to browse the full menu, customise orders, earn loyalty rewards, and track deliveries — all from their phone. It is available on both the iOS App Store and Google Play Store.",
-    role: "As part of the core development team, I was responsible for building and optimising key features of the consumer-facing mobile app. I owned the end-to-end ordering flow, built the Tropic Rewards® loyalty system, and introduced offline order support to ensure a seamless experience even in low-signal environments. I also focused heavily on performance and polish — developing custom loading and transition animations that made the app feel significantly faster and more premium.",
-    features: [
-      "End-to-end ordering flow — menu browsing, item customisation, checkout and order tracking",
-      "Tropic Rewards® loyalty system — points earning, reward redemption, and tier management",
-      "Offline order support — orders queue locally and sync when connection is restored",
-      "Custom animations using Reanimated and Lottie for loading screens and transitions",
-      "Accessibility features — screen reader compatibility and voice command support",
-      "Push notifications for order updates and promotional offers via Firebase",
-    ],
-    stack: ["React Native","TypeScript","Redux","Firebase","Reanimated","Lottie","REST APIs","CI/CD"],
-    metrics: [
-      {num:"1M+", label:"App Downloads"},
-      {num:"+10%", label:"Order Success Rate"},
-      {num:"+12%", label:"User Retention"},
-      {num:"+20%", label:"App Responsiveness"},
-      {num:"+15%", label:"Accessibility Usage"},
-    ],
-    links: [
-      {label:"Visit App Page", url:"https://www.tropicalsmoothiecafe.com/app", cls:"primary"},
-    ]
-  },
-
-  zeller: {
-    title: "Zeller — Fintech POS & Payments Platform",
-    badges: [{label:"Client Project",cls:"client"},{label:"Live Product",cls:"live"}],
-    overview: "Zeller is a leading UK fintech company providing card machines, business bank accounts, and point-of-sale systems to over 100,000 businesses — including major brands like Dominos and Baskin Robbins. Their platform helps businesses accept payments, manage finances, and track transactions all in one place. Zeller's POS mobile app is the primary interface through which business owners and staff process payments at the counter.",
-    role: "I was contracted to build the React Native mobile POS application for Zeller — the app used by businesses to process card payments and manage transactions. I designed the full architecture from scratch, built the transaction workflows, implemented secure API integrations with resilient retry logic, and owned the entire delivery lifecycle from design through to production. The system needed to handle high-frequency transactions with zero tolerance for failure.",
-    features: [
-      "Real-time payment processing with secure API integrations and transaction lifecycle management",
-      "Resilient retry logic ensuring no transactions are lost during network interruptions",
-      "State synchronisation across multiple devices and terminals simultaneously",
-      "Offline transaction queuing — payments process locally and sync when connection returns",
-      "Real-time order management dashboard for business owners",
-      "Multi-terminal support — manage multiple POS devices from one account",
-      "Comprehensive transaction history and reporting features",
-    ],
-    stack: ["React Native","TypeScript","Node.js","MongoDB","Redux","AWS","REST APIs","Fastlane","GitHub Actions"],
-    metrics: [
-      {num:"100k+", label:"Businesses Using Zeller"},
-      {num:"10k+", label:"Concurrent Users"},
-      {num:"99.8%", label:"Uptime Achieved"},
-      {num:"+25%", label:"API Response Speed"},
-    ],
-    links: [
-      {label:"Visit Zeller", url:"https://www.myzeller.com/gb", cls:"primary"},
-    ]
-  },
-
-  tiluf: {
-    title: "Tiluf — Hyper-Reality AR Social Network",
-    badges: [{label:"Own Product",cls:"own"},{label:"Live",cls:"live"}],
-    overview: "Tiluf is a hyper-reality social networking app that solves a genuine human problem — how do you connect with the interesting people physically around you without the awkwardness of cold approaches? Using Augmented Reality, the app overlays a person's name, interests, and openness to being approached directly above them in the real world as you look through your camera. It bridges the gap between digital convenience and real-life connection.",
-    role: "I led the full mobile app development for Tiluf — owning the product from architecture through to deployment. I built the core AR overlay engine using Google ARCore and ARKit, implemented real-time Bluetooth and GPS proximity detection, integrated blockchain-verified user profiles, and developed the full social interaction layer. I also focused on accessibility, ensuring AR content worked with screen readers and voice commands.",
-    features: [
-      "Real-time AR overlays showing nearby users' names and interests anchored to their physical position",
-      "Bluetooth and GPS proximity detection for instant real-world connection between users",
-      "Blockchain-verified user profiles ensuring authenticity and preventing fake accounts",
-      "Social interaction layer — leave compliments, comments, or bond over shared interests",
-      "User privacy controls — choose what's visible and when you appear to others",
-      "Accessibility support — AR content compatible with screen readers and voice commands",
-      "Real-time push notifications for interactions and nearby user alerts",
-    ],
-    stack: ["React Native","Google ARCore","ARKit","Python","Firebase","Blockchain","Bluetooth/GPS","REST APIs"],
-    metrics: [
-      {num:"-40%", label:"User Connection Time"},
-      {num:"+25%", label:"User Engagement"},
-      {num:"+15%", label:"Accessibility Usage"},
-      {num:"+20%", label:"Motor Impairment Engagement"},
-    ],
-    links: [
-      {label:"Visit Tiluf", url:"http://www.tiluf.com", cls:"primary"},
-    ]
-  },
-
-  coral: {
-    title: "Coral — Super Community Management Platform",
-    badges: [{label:"Own Product",cls:"own"},{label:"Google Play",cls:"live"}],
-    overview: "Community managers today struggle with fragmented communication — their members are spread across Slack, WhatsApp, Telegram, Discord, Slido, and more. Coral solves this by consolidating all major communication channels into a single unified real-time dashboard. You can list your WhatsApp groups, Telegram channels, Slack workspaces, and Discord servers — and manage, monitor, and communicate across all of them from one place.",
-    role: "I was the sole tech lead on Coral — handling everything from product architecture and UI/UX design to backend development and cloud deployment. I built the React web frontend, React Native mobile app, Java/SpringBoot backend, and the full AWS and Firebase infrastructure. I designed the multi-channel integration engine that connects and consolidates the various platforms, built real-time notification systems, and took the entire product from zero to a live launch on the Google Play Store.",
-    features: [
-      "Unified dashboard consolidating Slack, WhatsApp, Telegram, Discord, and Slido",
-      "Real-time updates and notifications across all connected platforms simultaneously",
-      "Community analytics — member growth, engagement rates, and activity tracking",
-      "Multi-admin support — assign roles and permissions to team members",
-      "Scheduled messaging across multiple channels from a single interface",
-      "GPS-based community features for location-aware group management",
-      "Full mobile app (React Native) and web app (React) with feature parity",
-    ],
-    stack: ["React","React Native","Java","SpringBoot","AWS","Firebase","Node.js","Google Play Store"],
-    metrics: [
-      {num:"4+", label:"Platforms Unified"},
-      {num:"-35%", label:"App Load Times"},
-      {num:"99.9%", label:"GPS Tracking Accuracy"},
-      {num:"0→1", label:"Zero to Google Play"},
-    ],
-    links: [
-      {label:"Google Play Store", url:"https://play.google.com/store/search?q=coral+community", cls:"primary"},
-    ]
-  },
-
-  yieldunion: {
-    title: "Yield Union — AI Creator Funding Platform",
-    badges: [{label:"Co-Founded",cls:"startup"},{label:"Live Product",cls:"live"}],
-    overview: "Yield Union is a creator-focused financing platform that solves a real problem for YouTube content creators — inconsistent income. Most mid-tier creators have the talent and audience to grow, but lack the upfront capital to produce their best work consistently. Yield Union provides funding based on projected ad revenue, allowing creators to scale their content without taking loans, giving up equity, or providing collateral.",
-    role: "I co-founded Yield Union alongside Sandeep as Tech Co-founder. I built the entire technology platform — including an AI-powered prediction engine that analyses a creator's historical performance data to forecast subscriber growth and revenue for their next 5–10 videos. I designed the revenue-sharing model, built the web platform, and continue to lead all product strategy, financial modelling, and platform development.",
-    features: [
-      "AI prediction engine — forecasts subscriber growth and ad revenue for next 5–10 videos",
-      "Historical performance analysis using channel data, engagement rates, and monetisation trends",
-      "Transparent revenue-sharing model — creators repay through ad revenue, no fixed repayments",
-      "Creator dashboard — track funding, repayment progress, and growth predictions",
-      "Risk assessment engine — evaluates channel viability before funding decisions",
-      "No loans, no collateral, no equity dilution — creator-first financing model",
-    ],
-    stack: ["React","Node.js","Python","AI/ML","Revenue Modelling","Firebase","REST APIs"],
-    metrics: [
-      {num:"AI", label:"Revenue Prediction Engine"},
-      {num:"5–10", label:"Videos Forecasted Ahead"},
-      {num:"0%", label:"Equity Dilution for Creators"},
-      {num:"Live", label:"Product at yiyuu.com"},
-    ],
-    links: [
-      {label:"Visit Yield Union", url:"https://www.yiyuu.com", cls:"primary"},
-    ]
-  },
-
-  zigzag: {
-    title: "Zig-Zag AI — Smart CCTV Surveillance Platform",
-    badges: [{label:"Client Project",cls:"client"},{label:"Live Product",cls:"live"}],
-    overview: "Most businesses have CCTV cameras but lack the staff to monitor them 24/7. Zig-Zag AI transforms any existing camera into an intelligent AI-powered supervisor that never sleeps. The platform uses computer vision and machine learning to detect unusual activity, send instant alerts, and give business owners complete visibility over their premises from anywhere in the world — all through a mobile app.",
-    role: "I was contracted to build the React Native mobile application — the primary interface through which users receive live surveillance alerts, review flagged footage, and manage their camera network. I developed NLP-based voice command functionality for hands-free operation, built AI-powered analytics dashboards, and integrated GPS-based task allocation for security teams. The app needed to handle real-time push notifications, live video streaming, and instant alert responses reliably across both iOS and Android.",
-    features: [
-      "Real-time AI detection alerts — instant push notifications for suspicious activity",
-      "Live camera feed monitoring — view any camera from anywhere at any time",
-      "NLP-based voice commands — control the app hands-free using natural language",
-      "AI-powered analytics dashboard — insights on activity patterns and security events",
-      "GPS-based task allocation — automatically assign alerts to nearest security team member",
-      "Real-time communication between security staff and management",
-      "Event history and footage review with AI-generated summaries",
-    ],
-    stack: ["React Native","NLP","AI/ML","GPS Task Allocation","Live Streaming","iOS","Android","Push Notifications"],
-    metrics: [
-      {num:"+35%", label:"Task Handling Speed"},
-      {num:"-20%", label:"Task Completion Delays"},
-      {num:"24/7", label:"AI Monitoring"},
-      {num:"Both", label:"iOS & Android Live"},
-    ],
-    links: [
-      {label:"Visit Zig-Zag AI", url:"https://www.zig-zag.ai", cls:"primary"},
-    ]
-  },
-};
-
-// ── MODAL FUNCTIONS ──────────────────────────────────
-function openProject(id) {
-  const p = projects[id];
-  if (!p) return;
-
-  // Badges
-  document.getElementById('modalBadges').innerHTML =
-    p.badges.map(b => `<span class="modal-badge ${b.cls}">${b.label}</span>`).join('');
-
-  // Title
-  document.getElementById('modalTitle').textContent = p.title;
-
-  // Overview
-  document.getElementById('modalOverview').textContent = p.overview;
-
-  // Role
-  document.getElementById('modalRole').textContent = p.role;
-
-  // Features
-  document.getElementById('modalFeatures').innerHTML =
-    p.features.map(f => `<li>${f}</li>`).join('');
-
-  // Stack
-  document.getElementById('modalStack').innerHTML =
-    p.stack.map(s => `<span class="modal-tag">${s}</span>`).join('');
-
-  // Metrics
-  document.getElementById('modalMetrics').innerHTML =
-    p.metrics.map(m => `<div class="modal-metric"><div class="modal-metric-num">${m.num}</div><div class="modal-metric-label">${m.label}</div></div>`).join('');
-
-  // Links
-  document.getElementById('modalLinks').innerHTML =
-    p.links.map(l => `<button class="modal-link-btn ${l.cls}" onclick="window.open('${l.url}','_blank','noopener')">${l.label} ↗</button>`).join('');
-
-  // Open
-  const overlay = document.getElementById('projectModal');
-  overlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  overlay.scrollTop = 0;
-}
-
-function closeModal() {
-  document.getElementById('projectModal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function closeModalOnOverlay(e) {
-  if (e.target === document.getElementById('projectModal')) closeModal();
-}
-
-// Close on Escape key
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
-});
-</script>
-</body>
-</html>
