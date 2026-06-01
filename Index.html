@@ -190,8 +190,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
 .modal-box{background:var(--paper);width:100%;max-width:860px;position:relative;transform:translateY(30px);transition:transform .3s ease;margin:auto;}
 .modal-overlay.open .modal-box{transform:translateY(0);}
 .modal-header{padding:40px 48px 32px;border-bottom:1px solid var(--line);position:relative;}
-.modal-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:22px;color:var(--ink3);cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;}
-.modal-close:hover{background:var(--paper2);color:var(--ink);}
+
 .modal-badges{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
 .modal-badge{font-family:'JetBrains Mono',monospace;font-size:10px;padding:4px 12px;letter-spacing:.06em;text-transform:uppercase;}
 .modal-badge.live{background:var(--sage);color:#fff;}
@@ -224,10 +223,8 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
 @media(max-width:600px){.modal-header{padding:24px 20px 18px;}.modal-body{padding:24px 20px;}.modal-metrics{grid-template-columns:1fr 1fr;}}
 
 /* ── PROJECT MODAL ── */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:500;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .3s ease;}
-.modal-overlay.open{opacity:1;pointer-events:all;}
-.modal-box{background:var(--paper);color:var(--ink);width:100%;max-width:780px;max-height:90vh;overflow-y:auto;border-radius:4px;position:relative;transform:translateY(24px);transition:transform .3s ease;scrollbar-width:thin;}
-.modal-overlay.open .modal-box{transform:translateY(0);}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:500;display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s ease;}
+.modal-box{background:var(--paper);color:var(--ink);width:100%;max-width:780px;max-height:90vh;overflow-y:auto;border-radius:4px;position:relative;scrollbar-width:thin;}
 .modal-header{padding:36px 40px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:1;}
 .modal-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:22px;color:var(--ink3);cursor:pointer;transition:color .2s;line-height:1;padding:4px 8px;z-index:10;}
 .modal-close:hover{color:var(--rust);}
@@ -663,10 +660,10 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
 <!-- ═══════════════════════════════════════════════════ -->
 
 <!-- MODAL 1: Tropical Smoothie -->
-<div class="modal-overlay" id="modal-ts" onclick="closeModalOutside(event,'modal-ts')">
+<div class="modal-overlay" id="modal-ts">
   <div class="modal-box">
     <div class="modal-header">
-      <button class="modal-close" onclick="event.stopPropagation();closeModal('modal-ts')">✕</button>
+      <button class="modal-close" onclick="closeModal('modal-ts')">✕</button>
       <div class="modal-type">Client Project · Mobile App</div>
       <div class="modal-title">Tropical Smoothie Cafe®<br>1M+ Downloads</div>
       <div class="modal-badges">
@@ -710,16 +707,16 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('https://www.tropicalsmoothiecafe.com/app','_blank','noopener')">Visit App Page →</button>
-      <button class="modal-link-btn outline" onclick="event.stopPropagation();closeModal('modal-ts')">Close</button>
+      <button class="modal-link-btn outline" onclick="closeModal('modal-ts')">Close</button>
     </div>
   </div>
 </div>
 
 <!-- MODAL 2: Zeller -->
-<div class="modal-overlay" id="modal-zeller" onclick="closeModalOutside(event,'modal-zeller')">
+<div class="modal-overlay" id="modal-zeller">
   <div class="modal-box">
     <div class="modal-header">
-      <button class="modal-close" onclick="event.stopPropagation();closeModal('modal-zeller')">✕</button>
+      <button class="modal-close" onclick="closeModal('modal-zeller')">✕</button>
       <div class="modal-type">Client Project · Fintech · POS Platform</div>
       <div class="modal-title">Zeller<br>Fintech POS & Payments</div>
       <div class="modal-badges">
@@ -764,16 +761,16 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('https://www.myzeller.com/gb','_blank','noopener')">Visit Zeller →</button>
-      <button class="modal-link-btn outline" onclick="event.stopPropagation();closeModal('modal-zeller')">Close</button>
+      <button class="modal-link-btn outline" onclick="closeModal('modal-zeller')">Close</button>
     </div>
   </div>
 </div>
 
 <!-- MODAL 3: Tiluf -->
-<div class="modal-overlay" id="modal-tiluf" onclick="closeModalOutside(event,'modal-tiluf')">
+<div class="modal-overlay" id="modal-tiluf">
   <div class="modal-box">
     <div class="modal-header">
-      <button class="modal-close" onclick="event.stopPropagation();closeModal('modal-tiluf')">✕</button>
+      <button class="modal-close" onclick="closeModal('modal-tiluf')">✕</button>
       <div class="modal-type">Own Product · AR · Social Networking</div>
       <div class="modal-title">Tiluf<br>Hyper-Reality Social Network</div>
       <div class="modal-badges">
@@ -817,16 +814,16 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('http://www.tiluf.com','_blank','noopener')">Visit Tiluf →</button>
-      <button class="modal-link-btn outline" onclick="event.stopPropagation();closeModal('modal-tiluf')">Close</button>
+      <button class="modal-link-btn outline" onclick="closeModal('modal-tiluf')">Close</button>
     </div>
   </div>
 </div>
 
 <!-- MODAL 4: Coral -->
-<div class="modal-overlay" id="modal-coral" onclick="closeModalOutside(event,'modal-coral')">
+<div class="modal-overlay" id="modal-coral">
   <div class="modal-box">
     <div class="modal-header">
-      <button class="modal-close" onclick="event.stopPropagation();closeModal('modal-coral')">✕</button>
+      <button class="modal-close" onclick="closeModal('modal-coral')">✕</button>
       <div class="modal-type">Own Product · Full-Stack · Community Platform</div>
       <div class="modal-title">Coral<br>Super Community Management</div>
       <div class="modal-badges">
@@ -870,16 +867,16 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
       </div>
     </div>
     <div class="modal-links">
-      <button class="modal-link-btn outline" onclick="event.stopPropagation();closeModal('modal-coral')">Close</button>
+      <button class="modal-link-btn outline" onclick="closeModal('modal-coral')">Close</button>
     </div>
   </div>
 </div>
 
 <!-- MODAL 5: Yield Union -->
-<div class="modal-overlay" id="modal-yield" onclick="closeModalOutside(event,'modal-yield')">
+<div class="modal-overlay" id="modal-yield">
   <div class="modal-box">
     <div class="modal-header">
-      <button class="modal-close" onclick="event.stopPropagation();closeModal('modal-yield')">✕</button>
+      <button class="modal-close" onclick="closeModal('modal-yield')">✕</button>
       <div class="modal-type">Co-Founded Startup · AI · Creator Economy</div>
       <div class="modal-title">Yield Union<br>AI Creator Funding Platform</div>
       <div class="modal-badges">
@@ -917,16 +914,16 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('https://www.yiyuu.com','_blank','noopener')">Visit Yield Union →</button>
-      <button class="modal-link-btn outline" onclick="event.stopPropagation();closeModal('modal-yield')">Close</button>
+      <button class="modal-link-btn outline" onclick="closeModal('modal-yield')">Close</button>
     </div>
   </div>
 </div>
 
 <!-- MODAL 6: Zig-Zag AI -->
-<div class="modal-overlay" id="modal-zigzag" onclick="closeModalOutside(event,'modal-zigzag')">
+<div class="modal-overlay" id="modal-zigzag">
   <div class="modal-box">
     <div class="modal-header">
-      <button class="modal-close" onclick="event.stopPropagation();closeModal('modal-zigzag')">✕</button>
+      <button class="modal-close" onclick="closeModal('modal-zigzag')">✕</button>
       <div class="modal-type">Client Project · AI · Surveillance Tech</div>
       <div class="modal-title">Zig-Zag AI<br>Smart CCTV Surveillance</div>
       <div class="modal-badges">
@@ -969,43 +966,49 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('https://www.zig-zag.ai','_blank','noopener')">Visit Zig-Zag AI →</button>
-      <button class="modal-link-btn outline" onclick="event.stopPropagation();closeModal('modal-zigzag')">Close</button>
+      <button class="modal-link-btn outline" onclick="closeModal('modal-zigzag')">Close</button>
     </div>
   </div>
 </div>
 
 <script>
-// Modal functions
+// ── MODAL SYSTEM ─────────────────────────────────────
 function openModal(id){
-  const m=document.getElementById(id);
-  if(m){
-    m.classList.add('open');
-    document.body.style.overflow='hidden';
-  }
+  var el = document.getElementById(id);
+  if(!el) return;
+  el.style.display = 'flex';
+  setTimeout(function(){ el.style.opacity = '1'; }, 10);
+  document.body.style.overflow = 'hidden';
 }
+
 function closeModal(id){
-  const m=document.getElementById(id);
-  if(m){
-    m.classList.remove('open');
-    document.body.style.overflow='';
-  }
+  var el = document.getElementById(id);
+  if(!el) return;
+  el.style.opacity = '0';
+  setTimeout(function(){ el.style.display = 'none'; }, 300);
+  document.body.style.overflow = '';
 }
-function closeModalOutside(e,id){
-  // Only close if clicking directly on the overlay background
-  if(e.target.classList.contains('modal-overlay')) closeModal(id);
-}
-// Close on Escape key
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'){
-    document.querySelectorAll('.modal-overlay.open').forEach(m=>{
-      m.classList.remove('open');
-    });
-    document.body.style.overflow='';
+
+// Close on overlay background click
+document.addEventListener('click', function(e){
+  if(e.target && e.target.classList.contains('modal-overlay')){
+    e.target.style.opacity = '0';
+    setTimeout(function(){ e.target.style.display = 'none'; }, 300);
+    document.body.style.overflow = '';
   }
 });
-// Stop clicks inside modal-box from closing the modal
-document.querySelectorAll('.modal-box').forEach(box=>{
-  box.addEventListener('click',e=>e.stopPropagation());
+
+// Close on Escape
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    document.querySelectorAll('.modal-overlay').forEach(function(m){
+      if(m.style.display === 'flex'){
+        m.style.opacity = '0';
+        setTimeout(function(){ m.style.display = 'none'; }, 300);
+      }
+    });
+    document.body.style.overflow = '';
+  }
 });
 </script>
   const el=document.getElementById(id);
@@ -1116,41 +1119,6 @@ window.addEventListener('scroll',()=>{
 },{passive:true});
 </script>
 <!-- PROJECT DETAIL MODAL -->
-<div class="modal-overlay" id="projectModal" onclick="closeModalOnOverlay(event)">
-  <div class="modal-box" id="modalBox">
-    <div class="modal-header">
-      <button class="modal-close" onclick="closeModal()">✕</button>
-      <div class="modal-badges" id="modalBadges"></div>
-      <div class="modal-title" id="modalTitle"></div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <div class="modal-section-title">Overview</div>
-        <p class="modal-text" id="modalOverview"></p>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">My Role</div>
-        <p class="modal-text" id="modalRole"></p>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Key Features</div>
-        <ul class="modal-list" id="modalFeatures"></ul>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Tech Stack</div>
-        <div class="modal-tags" id="modalStack"></div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Results & Impact</div>
-        <div class="modal-metrics" id="modalMetrics"></div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Links</div>
-        <div class="modal-links" id="modalLinks"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script>
 // ── PROJECT DATA ──────────────────────────────────────
