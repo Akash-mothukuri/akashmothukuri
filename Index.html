@@ -229,8 +229,9 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
 .modal-box{background:var(--paper);color:var(--ink);width:100%;max-width:780px;max-height:90vh;overflow-y:auto;border-radius:4px;position:relative;transform:translateY(24px);transition:transform .3s ease;scrollbar-width:thin;}
 .modal-overlay.open .modal-box{transform:translateY(0);}
 .modal-header{padding:36px 40px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:1;}
-.modal-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:22px;color:var(--ink3);cursor:pointer;transition:color .2s;line-height:1;padding:4px 8px;}
+.modal-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:22px;color:var(--ink3);cursor:pointer;transition:color .2s;line-height:1;padding:4px 8px;z-index:10;}
 .modal-close:hover{color:var(--rust);}
+.read-more-hint{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--rust);letter-spacing:.08em;text-transform:uppercase;}
 .modal-type{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--rust);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;}
 .modal-title{font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,32px);font-weight:700;line-height:1.1;letter-spacing:-.01em;color:var(--ink);margin-bottom:12px;}
 .modal-badges{display:flex;gap:8px;flex-wrap:wrap;}
@@ -396,6 +397,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
         <p class="proj-desc">One of the most-downloaded food ordering apps in the US. Built for a leading smoothie and food chain with hundreds of thousands of active daily users across the country. Click to read the full case study.</p>
         <div class="proj-tags"><span class="ptag">React Native</span><span class="ptag">TypeScript</span><span class="ptag">Firebase</span><span class="ptag">Redux</span><span class="ptag">Reanimated</span></div>
         <div class="proj-metrics"><span class="pmet">1M+ Downloads</span><span class="pmet">Order success +10%</span><span class="pmet">Responsiveness +20%</span></div>
+        <div class="read-more-hint">Read case study →</div>
       </div>
       <div class="proj-arr">→</div>
     </div>
@@ -407,6 +409,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
         <p class="proj-desc">Mobile POS and payments platform for Zeller — a fintech company trusted by 100,000+ businesses across the UK including Dominos and Baskin Robbins. Click to read the full case study.</p>
         <div class="proj-tags"><span class="ptag">React Native</span><span class="ptag">Node.js</span><span class="ptag">AWS</span><span class="ptag">MongoDB</span><span class="ptag">REST APIs</span></div>
         <div class="proj-metrics"><span class="pmet">100,000+ businesses</span><span class="pmet">99.8% uptime</span><span class="pmet">API speed +25%</span></div>
+        <div class="read-more-hint">Read case study →</div>
       </div>
       <div class="proj-arr">→</div>
     </div>
@@ -418,6 +421,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
         <p class="proj-desc">Hyper-reality social networking app that uses AR to show nearby users' names and interests as overlays in the real world. Built with Google ARCore and ARKit. Click to read the full case study.</p>
         <div class="proj-tags"><span class="ptag">React Native</span><span class="ptag">Google ARCore</span><span class="ptag">ARKit</span><span class="ptag">Blockchain</span><span class="ptag">GPS/BT</span></div>
         <div class="proj-metrics"><span class="pmet">Connection time -40%</span><span class="pmet">Engagement +25%</span></div>
+        <div class="read-more-hint">Read case study →</div>
       </div>
       <div class="proj-arr">→</div>
     </div>
@@ -429,6 +433,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
         <p class="proj-desc">Full-stack platform that consolidates Slack, WhatsApp, Telegram, and Discord into one unified real-time dashboard for community managers. Click to read the full case study.</p>
         <div class="proj-tags"><span class="ptag">React</span><span class="ptag">React Native</span><span class="ptag">Java</span><span class="ptag">SpringBoot</span><span class="ptag">AWS</span></div>
         <div class="proj-metrics"><span class="pmet">4 platforms unified</span><span class="pmet">Zero to production</span><span class="pmet">Google Play Store</span></div>
+        <div class="read-more-hint">Read case study →</div>
       </div>
       <div class="proj-arr">→</div>
     </div>
@@ -440,6 +445,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
         <p class="proj-desc">Co-founded platform that provides upfront capital to YouTube creators based on AI-predicted ad revenue. No loans, no equity dilution. Click to read the full case study.</p>
         <div class="proj-tags"><span class="ptag">React</span><span class="ptag">Node.js</span><span class="ptag">Python</span><span class="ptag">AI/ML</span><span class="ptag">Full-Stack</span></div>
         <div class="proj-metrics"><span class="pmet">Live product</span><span class="pmet">AI revenue prediction</span><span class="pmet">Mar 2024 — Present</span></div>
+        <div class="read-more-hint">Read case study →</div>
       </div>
       <div class="proj-arr">→</div>
     </div>
@@ -451,6 +457,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
         <p class="proj-desc">AI-powered surveillance platform that turns any existing CCTV camera into a 24/7 intelligent supervisor with real-time alerts and NLP voice commands. Click to read the full case study.</p>
         <div class="proj-tags"><span class="ptag">React Native</span><span class="ptag">NLP</span><span class="ptag">AI Analytics</span><span class="ptag">GPS</span><span class="ptag">iOS/Android</span></div>
         <div class="proj-metrics"><span class="pmet">Task speed +35%</span><span class="pmet">Delays -20%</span><span class="pmet">iOS & Android</span></div>
+        <div class="read-more-hint">Read case study →</div>
       </div>
       <div class="proj-arr">→</div>
     </div>
@@ -659,7 +666,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
 <div class="modal-overlay" id="modal-ts" onclick="closeModalOutside(event,'modal-ts')">
   <div class="modal-box">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('modal-ts')">✕</button>
+      <button class="modal-close" onclick="event.stopPropagation();closeModal('modal-ts')">✕</button>
       <div class="modal-type">Client Project · Mobile App</div>
       <div class="modal-title">Tropical Smoothie Cafe®<br>1M+ Downloads</div>
       <div class="modal-badges">
@@ -703,7 +710,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('https://www.tropicalsmoothiecafe.com/app','_blank','noopener')">Visit App Page →</button>
-      <button class="modal-link-btn outline" onclick="closeModal('modal-ts')">Close</button>
+      <button class="modal-link-btn outline" onclick="event.stopPropagation();closeModal('modal-ts')">Close</button>
     </div>
   </div>
 </div>
@@ -712,7 +719,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
 <div class="modal-overlay" id="modal-zeller" onclick="closeModalOutside(event,'modal-zeller')">
   <div class="modal-box">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('modal-zeller')">✕</button>
+      <button class="modal-close" onclick="event.stopPropagation();closeModal('modal-zeller')">✕</button>
       <div class="modal-type">Client Project · Fintech · POS Platform</div>
       <div class="modal-title">Zeller<br>Fintech POS & Payments</div>
       <div class="modal-badges">
@@ -757,7 +764,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('https://www.myzeller.com/gb','_blank','noopener')">Visit Zeller →</button>
-      <button class="modal-link-btn outline" onclick="closeModal('modal-zeller')">Close</button>
+      <button class="modal-link-btn outline" onclick="event.stopPropagation();closeModal('modal-zeller')">Close</button>
     </div>
   </div>
 </div>
@@ -766,7 +773,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
 <div class="modal-overlay" id="modal-tiluf" onclick="closeModalOutside(event,'modal-tiluf')">
   <div class="modal-box">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('modal-tiluf')">✕</button>
+      <button class="modal-close" onclick="event.stopPropagation();closeModal('modal-tiluf')">✕</button>
       <div class="modal-type">Own Product · AR · Social Networking</div>
       <div class="modal-title">Tiluf<br>Hyper-Reality Social Network</div>
       <div class="modal-badges">
@@ -810,7 +817,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('http://www.tiluf.com','_blank','noopener')">Visit Tiluf →</button>
-      <button class="modal-link-btn outline" onclick="closeModal('modal-tiluf')">Close</button>
+      <button class="modal-link-btn outline" onclick="event.stopPropagation();closeModal('modal-tiluf')">Close</button>
     </div>
   </div>
 </div>
@@ -819,7 +826,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
 <div class="modal-overlay" id="modal-coral" onclick="closeModalOutside(event,'modal-coral')">
   <div class="modal-box">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('modal-coral')">✕</button>
+      <button class="modal-close" onclick="event.stopPropagation();closeModal('modal-coral')">✕</button>
       <div class="modal-type">Own Product · Full-Stack · Community Platform</div>
       <div class="modal-title">Coral<br>Super Community Management</div>
       <div class="modal-badges">
@@ -863,7 +870,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
       </div>
     </div>
     <div class="modal-links">
-      <button class="modal-link-btn outline" onclick="closeModal('modal-coral')">Close</button>
+      <button class="modal-link-btn outline" onclick="event.stopPropagation();closeModal('modal-coral')">Close</button>
     </div>
   </div>
 </div>
@@ -872,7 +879,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
 <div class="modal-overlay" id="modal-yield" onclick="closeModalOutside(event,'modal-yield')">
   <div class="modal-box">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('modal-yield')">✕</button>
+      <button class="modal-close" onclick="event.stopPropagation();closeModal('modal-yield')">✕</button>
       <div class="modal-type">Co-Founded Startup · AI · Creator Economy</div>
       <div class="modal-title">Yield Union<br>AI Creator Funding Platform</div>
       <div class="modal-badges">
@@ -910,7 +917,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('https://www.yiyuu.com','_blank','noopener')">Visit Yield Union →</button>
-      <button class="modal-link-btn outline" onclick="closeModal('modal-yield')">Close</button>
+      <button class="modal-link-btn outline" onclick="event.stopPropagation();closeModal('modal-yield')">Close</button>
     </div>
   </div>
 </div>
@@ -919,7 +926,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
 <div class="modal-overlay" id="modal-zigzag" onclick="closeModalOutside(event,'modal-zigzag')">
   <div class="modal-box">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('modal-zigzag')">✕</button>
+      <button class="modal-close" onclick="event.stopPropagation();closeModal('modal-zigzag')">✕</button>
       <div class="modal-type">Client Project · AI · Surveillance Tech</div>
       <div class="modal-title">Zig-Zag AI<br>Smart CCTV Surveillance</div>
       <div class="modal-badges">
@@ -962,7 +969,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('https://www.zig-zag.ai','_blank','noopener')">Visit Zig-Zag AI →</button>
-      <button class="modal-link-btn outline" onclick="closeModal('modal-zigzag')">Close</button>
+      <button class="modal-link-btn outline" onclick="event.stopPropagation();closeModal('modal-zigzag')">Close</button>
     </div>
   </div>
 </div>
@@ -984,14 +991,21 @@ function closeModal(id){
   }
 }
 function closeModalOutside(e,id){
-  if(e.target===document.getElementById(id)) closeModal(id);
+  // Only close if clicking directly on the overlay background
+  if(e.target.classList.contains('modal-overlay')) closeModal(id);
 }
 // Close on Escape key
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){
-    document.querySelectorAll('.modal-overlay.open').forEach(m=>m.classList.remove('open'));
+    document.querySelectorAll('.modal-overlay.open').forEach(m=>{
+      m.classList.remove('open');
+    });
     document.body.style.overflow='';
   }
+});
+// Stop clicks inside modal-box from closing the modal
+document.querySelectorAll('.modal-box').forEach(box=>{
+  box.addEventListener('click',e=>e.stopPropagation());
 });
 </script>
   const el=document.getElementById(id);
