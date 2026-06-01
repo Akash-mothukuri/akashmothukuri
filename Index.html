@@ -994,6 +994,141 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
   </div>
 </div>
-
 <script>
+// ── SCROLL TO SECTION ──
+function go(id){
+  var el=document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
 
+// ── COPY EMAIL ──
+function copyEmail(){
+  var email='mothukuriashok28@gmail.com';
+  var toast=document.getElementById('toast');
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(email).then(function(){showToast('Email copied!');}).catch(function(){fallback(email);});
+  } else { fallback(email); }
+}
+function fallback(text){
+  var ta=document.createElement('textarea');
+  ta.value=text; ta.style.cssText='position:fixed;opacity:0;top:0;left:0;';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{document.execCommand('copy');showToast('Email copied!');}catch(e){}
+  document.body.removeChild(ta);
+}
+function showToast(msg){
+  var t=document.getElementById('toast');
+  if(!t)return;
+  t.textContent=msg||'Copied!';
+  t.classList.add('on');
+  setTimeout(function(){t.classList.remove('on');},3000);
+}
+
+// ── DOWNLOAD CV ──
+function downloadCV(){
+  var link=document.createElement('a');
+  link.href='AkashMothukuri_CV.pdf';
+  link.download='AkashMothukuri_CV.pdf';
+  link.target='_blank';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+// ── MODAL OPEN / CLOSE ──
+function openModal(id){
+  var el=document.getElementById(id);
+  if(!el)return;
+  el.classList.add('active');
+  el.scrollTop=0;
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){
+  var el=document.getElementById(id);
+  if(!el)return;
+  el.classList.remove('active');
+  document.body.style.overflow='';
+}
+
+// Close modal by clicking dark background
+window.addEventListener('click',function(e){
+  if(e.target&&e.target.classList.contains('modal-overlay')){
+    e.target.classList.remove('active');
+    document.body.style.overflow='';
+  }
+});
+
+// Close modal with Escape key
+window.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    document.querySelectorAll('.modal-overlay.active').forEach(function(m){
+      m.classList.remove('active');
+    });
+    document.body.style.overflow='';
+  }
+});
+
+// ── SCROLL REVEAL ──
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e,i){
+    if(e.isIntersecting){
+      setTimeout(function(){e.target.classList.add('vis');},i*70);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(function(el){
+  var rect=el.getBoundingClientRect();
+  if(rect.top>window.innerHeight){
+    el.classList.add('animate');
+    obs.observe(el);
+  }
+});
+
+// ── ACTIVE NAV ──
+var secs=document.querySelectorAll('section[id]');
+var btns=document.querySelectorAll('.nav-links button');
+var ids=['about','skills','projects','certifications','experience','contact'];
+window.addEventListener('scroll',function(){
+  var cur='';
+  secs.forEach(function(s){if(window.scrollY>=s.offsetTop-130)cur=s.id;});
+  btns.forEach(function(b,i){b.classList.toggle('active',ids[i]===cur);});
+},{passive:true});
+
+// ── CONTACT FORM ──
+function handleForm(e){
+  e.preventDefault();
+  var form=document.getElementById('contact-form');
+  var btn=document.getElementById('f-submit');
+  var successMsg=document.getElementById('form-success');
+  if(!form||!btn)return;
+  btn.innerHTML='Sending... <span>⟳</span>';
+  btn.classList.add('sending');
+  var formData={
+    name:document.getElementById('f-name')?document.getElementById('f-name').value:'',
+    email:document.getElementById('f-email')?document.getElementById('f-email').value:'',
+    company:document.getElementById('f-company')?document.getElementById('f-company').value:'',
+    subject:document.getElementById('f-subject')?document.getElementById('f-subject').value:'',
+    message:document.getElementById('f-message')?document.getElementById('f-message').value:'',
+  };
+  fetch('https://formspree.io/f/meedelkj',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify(formData),
+  })
+  .then(function(r){
+    if(r.ok){
+      if(form) form.style.display='none';
+      if(successMsg) successMsg.style.display='block';
+      showToast('Message sent successfully!');
+    } else { throw new Error('failed'); }
+  })
+  .catch(function(){
+    btn.innerHTML='Send message <span>→</span>';
+    btn.classList.remove('sending');
+    showToast('Something went wrong — please email directly');
+  });
+}
+</script>
+</body>
+</html>
