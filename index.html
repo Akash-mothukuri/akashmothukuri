@@ -859,18 +859,17 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-body">
       <div class="modal-section">
-        <div class="modal-section-title">What Is This Project</div>
-        <p class="modal-text">Tropical Smoothie Cafe is one of the most-downloaded food ordering apps in the United States, serving hundreds of thousands of customers every single day. The app allows customers to browse the full menu, customise their smoothies and food items, place orders for pickup or delivery, earn loyalty rewards, and pay — all from their phone. The chain has hundreds of locations across the US and the app is central to how they operate.</p>
+        <div class="modal-section-title">The Problem</div>
+        <p class="modal-text">Tropical Smoothie Cafe had hundreds of locations across the US but their mobile app wasn't matching the quality of their in-store experience. Customers were dropping off during checkout, loyalty rewards were hard to redeem, and the app failed entirely on poor connections — costing real orders every day.</p>
       </div>
       <div class="modal-section">
         <div class="modal-section-title">What I Built</div>
         <ul class="modal-features">
-          <li>Owned the end-to-end ordering flow — menu browsing, item customisation, checkout, and order tracking</li>
-          <li>Built the Tropic Rewards® loyalty system — points earning, reward redemption, and tier management</li>
-          <li>Implemented offline order support so customers could place orders without a stable internet connection</li>
-          <li>Developed custom loading and transition animations using Reanimated and Lottie for a premium feel</li>
-          <li>Added accessibility features including screen reader compatibility and voice command support</li>
-          <li>Worked within a structured Scrum team with fortnightly production deployments</li>
+          <li>Rebuilt the end-to-end ordering flow — menu browsing, item customisation, checkout, and order tracking — reducing friction at every step</li>
+          <li>Built the Tropic Rewards® loyalty system — points earning, reward redemption, and tier management integrated with live backend services</li>
+          <li>Implemented offline order support with local queue — customers could place orders without a stable connection, syncing when reconnected</li>
+          <li>Built custom loading and transition animations using Reanimated and Lottie to deliver a premium, native-feeling experience</li>
+          <li>Added WCAG 2.1 accessibility including screen reader compatibility and voice command support, opening the app to a wider audience</li>
         </ul>
       </div>
       <div class="modal-section">
@@ -885,11 +884,9 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
           <div class="modal-metric"><div class="modal-metric-num">1M+</div><div class="modal-metric-label">App Downloads</div></div>
           <div class="modal-metric"><div class="modal-metric-num">+10%</div><div class="modal-metric-label">Order Success Rate</div></div>
           <div class="modal-metric"><div class="modal-metric-num">+20%</div><div class="modal-metric-label">App Responsiveness</div></div>
-          <div class="modal-metric"><div class="modal-metric-num">+12%</div><div class="modal-metric-label">User Retention</div></div>
           <div class="modal-metric"><div class="modal-metric-num">+15%</div><div class="modal-metric-label">Accessibility Usage</div></div>
         </div>
       </div>
-    </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('https://www.tropicalsmoothiecafe.com/app','_blank','noopener')">Visit App Page →</button>
       <button class="modal-link-btn outline" onclick="closeModal('modal-ts')">Close</button>
@@ -912,38 +909,36 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-body">
       <div class="modal-section">
-        <div class="modal-section-title">What Is This Project</div>
-        <p class="modal-text">Zeller is a leading UK fintech company that provides card payment terminals, business bank accounts, and POS systems to over 100,000 businesses — including major chains like Dominos and Baskin Robbins, as well as thousands of independent retailers and hospitality businesses. Their mobile app is the primary tool merchants use to manage transactions, track sales, and run their business from anywhere.</p>
+        <div class="modal-section-title">The Challenge</div>
+        <p class="modal-text">Zeller's fintech POS platform was already serving businesses across Australia when I joined as a React Native engineer. The platform needed to scale significantly — handling higher transaction volumes, improving reliability under peak load, and extending mobile capabilities. My role was to contribute meaningfully to an existing, high-stakes codebase where performance and uptime were non-negotiable.</p>
       </div>
       <div class="modal-section">
-        <div class="modal-section-title">What I Built</div>
+        <div class="modal-section-title">My Contribution</div>
         <ul class="modal-features">
-          <li>Designed and built the mobile POS and payments platform from the ground up as a greenfield project</li>
-          <li>Architected the full transaction system — payment flows, real-time order processing, and state synchronisation</li>
-          <li>Built secure API integrations with resilient retry logic ensuring no transaction was ever lost under poor connectivity</li>
-          <li>Implemented real-time order processing supporting 10,000+ concurrent sessions simultaneously</li>
-          <li>Optimised REST APIs (Node.js/MongoDB) cutting average response times by 25%</li>
-          <li>Applied TDD with 80%+ test coverage — reduced production defects by 25%</li>
-          <li>Managed iOS and Android releases via Fastlane and GitHub Actions CI/CD pipelines</li>
+          <li>Developed and improved mobile transaction workflows — building new features and hardening existing flows with resilient retry logic and state synchronisation</li>
+          <li>Strengthened REST API integrations with intelligent retry handling to ensure zero transaction loss under poor connectivity or peak load</li>
+          <li>Contributed to offline-first architecture improvements — merchants could keep taking payments even without internet connectivity</li>
+          <li>Drove TDD adoption with 80%+ coverage across new code, reducing production defects by 25% and raising the quality bar across the team</li>
+          <li>Optimised Node.js and MongoDB queries, cutting API response times by 25% through profiling and targeted refactoring</li>
+          <li>Contributed to iOS and Android release processes via Fastlane and GitHub Actions CI/CD pipelines</li>
         </ul>
       </div>
       <div class="modal-section">
         <div class="modal-section-title">Tech Stack</div>
         <div class="modal-tags">
-          <span class="modal-tag">React Native</span><span class="modal-tag">TypeScript</span><span class="modal-tag">Node.js</span><span class="modal-tag">MongoDB</span><span class="modal-tag">AWS</span><span class="modal-tag">Redux</span><span class="modal-tag">REST APIs</span><span class="modal-tag">Fastlane</span><span class="modal-tag">GitHub Actions</span><span class="modal-tag">TDD</span>
+          <span class="modal-tag">React Native</span><span class="modal-tag">TypeScript</span><span class="modal-tag">Node.js</span><span class="modal-tag">MongoDB</span><span class="modal-tag">AWS</span><span class="modal-tag">Redux</span><span class="modal-tag">Firebase</span><span class="modal-tag">Fastlane</span><span class="modal-tag">GitHub Actions</span><span class="modal-tag">TDD</span>
         </div>
       </div>
       <div class="modal-section">
         <div class="modal-section-title">Results & Impact</div>
         <div class="modal-metrics">
-          <div class="modal-metric"><div class="modal-metric-num">100k+</div><div class="modal-metric-label">Businesses Using It</div></div>
-          <div class="modal-metric"><div class="modal-metric-num">99.8%</div><div class="modal-metric-label">Uptime Achieved</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">100k+</div><div class="modal-metric-label">Businesses Served</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">99.8%</div><div class="modal-metric-label">Uptime</div></div>
           <div class="modal-metric"><div class="modal-metric-num">10k+</div><div class="modal-metric-label">Concurrent Users</div></div>
-          <div class="modal-metric"><div class="modal-metric-num">+25%</div><div class="modal-metric-label">API Speed Improvement</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">-25%</div><div class="modal-metric-label">API Response Time</div></div>
           <div class="modal-metric"><div class="modal-metric-num">-25%</div><div class="modal-metric-label">Production Defects</div></div>
         </div>
       </div>
-    </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('https://www.myzeller.com/gb','_blank','noopener')">Visit Zeller →</button>
       <button class="modal-link-btn outline" onclick="closeModal('modal-zeller')">Close</button>
@@ -966,37 +961,34 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-body">
       <div class="modal-section">
-        <div class="modal-section-title">What Is This Project</div>
-        <p class="modal-text">Tiluf is a hyper-reality social networking app that solves a genuine human problem — how do you connect with the interesting people physically around you without the awkwardness of cold approaches? The app uses Augmented Reality to overlay a person's name, interests, and openness to being approached directly above them in the real world as you look through your phone camera. If you want to connect, you can leave a compliment, comment on what they're doing, or bond over shared interests — all through the app, with just a single click.</p>
+        <div class="modal-section-title">The Problem</div>
+        <p class="modal-text">Social networking is entirely screen-based — you discover people by scrolling, not by being near them. Tiluf set out to change that: what if you could see who was physically nearby, interact with them through AR overlays in the real world, and build a verified digital identity on the blockchain? No one had shipped this combination in a consumer mobile app before.</p>
       </div>
       <div class="modal-section">
         <div class="modal-section-title">What I Built</div>
         <ul class="modal-features">
-          <li>Led the full mobile app development — sole tech lead on the React Native application</li>
-          <li>Built the real-time AR overlay engine using Google ARCore (Android) and ARKit (iOS)</li>
-          <li>Implemented Bluetooth and GPS proximity detection for real-time user discovery</li>
-          <li>Integrated blockchain-verified profiles to ensure authenticity of user identities</li>
-          <li>Built interaction system — compliments, comments, and interest-based bonding with single-click UX</li>
-          <li>Developed full accessibility support — AR content compatible with screen readers and voice commands</li>
-          <li>Collaborated with a dynamic team bridging digital and physical world interaction</li>
+          <li>Built real-time AR overlays using Google ARCore — users could see the names, interests, and profiles of nearby people through their camera in physical space</li>
+          <li>Engineered a Bluetooth and GPS proximity detection system that identified nearby users in real time — connection time reduced by 40%</li>
+          <li>Integrated blockchain for verified user identity profiles — decentralised authentication that couldn't be faked or spoofed</li>
+          <li>Built real-time interaction systems — compliments, comments, and interest matching — with low-latency performance across live user sessions</li>
+          <li>Designed the full React Native mobile architecture cross-platform for iOS and Android, optimised for AR performance and battery impact</li>
         </ul>
       </div>
       <div class="modal-section">
         <div class="modal-section-title">Tech Stack</div>
         <div class="modal-tags">
-          <span class="modal-tag">React Native</span><span class="modal-tag">Google ARCore</span><span class="modal-tag">ARKit</span><span class="modal-tag">Python</span><span class="modal-tag">Firebase</span><span class="modal-tag">Blockchain</span><span class="modal-tag">Bluetooth API</span><span class="modal-tag">GPS</span>
+          <span class="modal-tag">React Native</span><span class="modal-tag">Google ARCore</span><span class="modal-tag">ARKit</span><span class="modal-tag">Blockchain</span><span class="modal-tag">Python</span><span class="modal-tag">Firebase</span><span class="modal-tag">GPS</span><span class="modal-tag">Bluetooth</span><span class="modal-tag">REST APIs</span>
         </div>
       </div>
       <div class="modal-section">
         <div class="modal-section-title">Results & Impact</div>
         <div class="modal-metrics">
           <div class="modal-metric"><div class="modal-metric-num">-40%</div><div class="modal-metric-label">Connection Time</div></div>
-          <div class="modal-metric"><div class="modal-metric-num">+25%</div><div class="modal-metric-label">User Engagement</div></div>
-          <div class="modal-metric"><div class="modal-metric-num">+15%</div><div class="modal-metric-label">Accessibility Usage</div></div>
-          <div class="modal-metric"><div class="modal-metric-num">+20%</div><div class="modal-metric-label">Motor Impairment Engagement</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">+25%</div><div class="modal-metric-label">Engagement After Blockchain Launch</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">iOS+Android</div><div class="modal-metric-label">Cross-Platform</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">Real-Time</div><div class="modal-metric-label">AR + Identity Layer</div></div>
         </div>
       </div>
-    </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('http://www.tiluf.com','_blank','noopener')">Visit Tiluf →</button>
       <button class="modal-link-btn outline" onclick="closeModal('modal-tiluf')">Close</button>
@@ -1019,38 +1011,34 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-body">
       <div class="modal-section">
-        <div class="modal-section-title">What Is This Project</div>
-        <p class="modal-text">Community managers today are overwhelmed. Their members are spread across Slack, WhatsApp, Telegram, Discord, Slido, and more — and managing all of them simultaneously is nearly impossible. Coral solves this by consolidating every major communication channel into a single unified real-time dashboard. You can list your WhatsApp groups, Telegram channels, Slack workspaces, and Discord servers — and manage everything from one interface, with real-time updates and notifications.</p>
+        <div class="modal-section-title">The Problem</div>
+        <p class="modal-text">Community managers were drowning — running groups across Slack, WhatsApp, Telegram, and Discord simultaneously, with no unified view, no shared tooling, and constant context switching. I built Coral entirely from scratch to solve this — sole engineer, sole architect, sole decision-maker. No team, no existing codebase, no blueprint. Just a problem worth solving and full ownership of the solution.</p>
       </div>
       <div class="modal-section">
-        <div class="modal-section-title">What I Built</div>
+        <div class="modal-section-title">What I Built — From Zero to Live</div>
         <ul class="modal-features">
-          <li>Sole tech lead — took the product from zero to live on the Google Play Store end-to-end</li>
-          <li>Designed the full system architecture across web, mobile, backend, and cloud infrastructure</li>
-          <li>Built the React web frontend — multi-channel dashboard with real-time updates</li>
-          <li>Built the React Native mobile app for on-the-go community management</li>
-          <li>Developed the Java/SpringBoot backend handling all channel integrations and data sync</li>
-          <li>Deployed and managed the entire AWS and Firebase infrastructure</li>
-          <li>Reduced app load times by 35% through targeted performance optimisation</li>
-          <li>Achieved 99.9% GPS tracking accuracy for location-based community features</li>
+          <li>Designed the entire distributed architecture from scratch — React web frontend, React Native mobile app, Java/SpringBoot microservices backend, AWS infrastructure, and Firebase real-time sync</li>
+          <li>Built the multi-channel consolidation engine — a single dashboard managing Slack, WhatsApp, Discord, and Telegram simultaneously with unified notifications and member management</li>
+          <li>Implemented real-time messaging and notification routing across all connected platforms from one interface — replacing 4 separate tools with one</li>
+          <li>Deployed and managed the full AWS infrastructure with Firebase real-time database, architected to scale from day one</li>
+          <li>Shipped to the Google Play Store independently — owned every step from first line of code to live production deployment</li>
         </ul>
       </div>
       <div class="modal-section">
         <div class="modal-section-title">Tech Stack</div>
         <div class="modal-tags">
-          <span class="modal-tag">React</span><span class="modal-tag">React Native</span><span class="modal-tag">Java</span><span class="modal-tag">SpringBoot</span><span class="modal-tag">AWS</span><span class="modal-tag">Firebase</span><span class="modal-tag">REST APIs</span><span class="modal-tag">Real-time DB</span>
+          <span class="modal-tag">React</span><span class="modal-tag">React Native</span><span class="modal-tag">TypeScript</span><span class="modal-tag">Java</span><span class="modal-tag">SpringBoot</span><span class="modal-tag">AWS</span><span class="modal-tag">Firebase</span><span class="modal-tag">Google Play Store</span>
         </div>
       </div>
       <div class="modal-section">
         <div class="modal-section-title">Results & Impact</div>
         <div class="modal-metrics">
-          <div class="modal-metric"><div class="modal-metric-num">4</div><div class="modal-metric-label">Platforms Unified</div></div>
-          <div class="modal-metric"><div class="modal-metric-num">-35%</div><div class="modal-metric-label">App Load Times</div></div>
-          <div class="modal-metric"><div class="modal-metric-num">99.9%</div><div class="modal-metric-label">GPS Tracking Accuracy</div></div>
-          <div class="modal-metric"><div class="modal-metric-num">0→1</div><div class="modal-metric-label">Zero to Play Store</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">100%</div><div class="modal-metric-label">Built From Scratch</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">4-in-1</div><div class="modal-metric-label">Platforms Unified</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">Live</div><div class="modal-metric-label">Google Play Store</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">Solo</div><div class="modal-metric-label">Engineer → Architect → Founder</div></div>
         </div>
       </div>
-    </div>
     <div class="modal-links">
       <button class="modal-link-btn outline" onclick="closeModal('modal-coral')">Close</button>
     </div>
@@ -1072,31 +1060,34 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-body">
       <div class="modal-section">
-        <div class="modal-section-title">What Is This Project</div>
-        <p class="modal-text">YouTube creators face a fundamental problem — they have to spend money producing content before they earn any revenue from it. Traditional banks won't lend against future ad revenue, and investors want equity in return for capital. Yield Union solves this by providing upfront funding to YouTube creators based on their projected ad revenue. Creators repay through a transparent revenue-sharing model — no loans, no collateral, no equity dilution. The platform is built around a proprietary AI engine that accurately forecasts how much a creator will earn from their next 5–10 videos.</p>
+        <div class="modal-section-title">The Problem</div>
+        <p class="modal-text">Mid-tier YouTube creators — those making real content with real audiences — face a frustrating cash flow problem. Ad revenue arrives months after content is published, making it nearly impossible to reinvest in production, equipment, or growth. Banks won't lend to them. Yield Union was built to change that by turning future ad revenue into upfront capital.</p>
       </div>
       <div class="modal-section">
         <div class="modal-section-title">What I Built</div>
         <ul class="modal-features">
-          <li>Co-founded the company alongside Sandeep as Tech Co-founder — building and owning the entire technology platform</li>
-          <li>Built the AI prediction engine that analyses historical video performance, subscriber growth, and revenue patterns to forecast future earnings</li>
-          <li>Designed the revenue-sharing model infrastructure — tracking repayments, managing funding decisions, and creator dashboards</li>
-          <li>Built the full web platform from frontend to backend to deployment</li>
-          <li>Leading product strategy, financial modelling, and platform development end-to-end</li>
-          <li>Platform is live at yiyuu.com and actively onboarding YouTube creators</li>
+          <li>Co-founded Yield Union and led all technical development — product strategy, platform architecture, and AI engine design</li>
+          <li>Built an AI prediction engine that analyses a creator's historical YouTube performance and forecasts ad revenue for the next 5–10 videos with meaningful accuracy</li>
+          <li>Developed the full-stack web platform — React frontend, Node.js/Python backend, and AWS infrastructure — for creators to apply, get assessed, and receive funding</li>
+          <li>Designed a transparent revenue-sharing model that gives creators upfront capital without loans, collateral, or equity dilution</li>
+          <li>Shipped the live platform at yiyuu.com — actively serving creators in the UK and building toward scale</li>
         </ul>
       </div>
       <div class="modal-section">
         <div class="modal-section-title">Tech Stack</div>
         <div class="modal-tags">
-          <span class="modal-tag">React</span><span class="modal-tag">Node.js</span><span class="modal-tag">Python</span><span class="modal-tag">AI/ML</span><span class="modal-tag">Revenue Modelling</span><span class="modal-tag">AWS</span><span class="modal-tag">REST APIs</span><span class="modal-tag">Full-Stack</span>
+          <span class="modal-tag">React</span><span class="modal-tag">Node.js</span><span class="modal-tag">Python</span><span class="modal-tag">AI/ML</span><span class="modal-tag">AWS</span><span class="modal-tag">TanStack Query</span><span class="modal-tag">REST APIs</span><span class="modal-tag">Firebase</span>
         </div>
       </div>
       <div class="modal-section">
-        <div class="modal-section-title">The Mission</div>
-        <p class="modal-text">To empower mid-tier YouTube creators to scale their content without financial barriers — giving them the capital they need to produce more, grow faster, and earn more, while keeping full ownership of their channel and content.</p>
+        <div class="modal-section-title">Results & Impact</div>
+        <div class="modal-metrics">
+          <div class="modal-metric"><div class="modal-metric-num">Live</div><div class="modal-metric-label">yiyuu.com</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">AI</div><div class="modal-metric-label">Revenue Prediction Engine</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">Co-Founded</div><div class="modal-metric-label">Tech + Product Lead</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">0% Equity</div><div class="modal-metric-label">Dilution for Creators</div></div>
+        </div>
       </div>
-    </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('https://www.yiyuu.com','_blank','noopener')">Visit Yield Union →</button>
       <button class="modal-link-btn outline" onclick="closeModal('modal-yield')">Close</button>
@@ -1119,24 +1110,23 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     </div>
     <div class="modal-body">
       <div class="modal-section">
-        <div class="modal-section-title">What Is This Project</div>
-        <p class="modal-text">Most businesses have existing CCTV cameras but lack the staff and resources to monitor them around the clock. Zig-Zag AI transforms any existing camera into an intelligent AI-powered supervisor that never sleeps. The platform detects unusual activity, sends real-time alerts to the business owner's phone, flags events for review, and gives complete visibility over any premises from anywhere in the world. It's available on both the App Store and Google Play Store.</p>
+        <div class="modal-section-title">The Problem</div>
+        <p class="modal-text">Traditional CCTV systems are passive — they record, but they don't act. Security teams monitoring multiple cameras across large sites struggled to respond quickly, communicate task assignments, and track field operatives in real time. Zig-Zag AI needed a mobile app that turned their AI surveillance platform into an intelligent, actionable command tool.</p>
       </div>
       <div class="modal-section">
         <div class="modal-section-title">What I Built</div>
         <ul class="modal-features">
-          <li>Built the full React Native mobile application — the primary interface for the entire platform</li>
-          <li>Developed NLP-based voice command functionality — users can control the app and query their cameras using natural language</li>
-          <li>Built AI-powered analytics dashboard that gives actionable insights from camera data</li>
-          <li>Integrated GPS-based task allocation and real-time communication features for field teams</li>
-          <li>Implemented live video streaming with real-time push notifications for instant alerts</li>
-          <li>Delivered the app on both iOS and Android with consistent performance across devices</li>
+          <li>Built the React Native mobile app from the ground up — the primary interface for security operators to monitor, respond, and communicate across the AI surveillance platform</li>
+          <li>Integrated NLP-powered voice commands allowing operators to issue instructions, query camera feeds, and assign tasks hands-free in high-pressure situations</li>
+          <li>Built GPS-based task allocation — the system could automatically assign field tasks to the nearest available operative based on real-time location data</li>
+          <li>Implemented live video feed integration with real-time AI alert notifications — operators were notified of incidents instantly on mobile</li>
+          <li>Delivered cross-platform for iOS and Android with offline fallback for connectivity-challenged environments</li>
         </ul>
       </div>
       <div class="modal-section">
         <div class="modal-section-title">Tech Stack</div>
         <div class="modal-tags">
-          <span class="modal-tag">React Native</span><span class="modal-tag">NLP Voice Commands</span><span class="modal-tag">AI Analytics</span><span class="modal-tag">GPS Task Allocation</span><span class="modal-tag">Live Streaming</span><span class="modal-tag">Push Notifications</span><span class="modal-tag">iOS</span><span class="modal-tag">Android</span>
+          <span class="modal-tag">React Native</span><span class="modal-tag">TypeScript</span><span class="modal-tag">NLP</span><span class="modal-tag">AI Analytics</span><span class="modal-tag">GPS</span><span class="modal-tag">REST APIs</span><span class="modal-tag">Firebase</span><span class="modal-tag">iOS</span><span class="modal-tag">Android</span>
         </div>
       </div>
       <div class="modal-section">
@@ -1144,11 +1134,10 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
         <div class="modal-metrics">
           <div class="modal-metric"><div class="modal-metric-num">+35%</div><div class="modal-metric-label">Task Handling Speed</div></div>
           <div class="modal-metric"><div class="modal-metric-num">-20%</div><div class="modal-metric-label">Task Completion Delays</div></div>
-          <div class="modal-metric"><div class="modal-metric-num">24/7</div><div class="modal-metric-label">AI Monitoring</div></div>
-          <div class="modal-metric"><div class="modal-metric-num">2</div><div class="modal-metric-label">Platforms (iOS + Android)</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">Voice</div><div class="modal-metric-label">NLP Command System</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">Real-Time</div><div class="modal-metric-label">GPS Task Allocation</div></div>
         </div>
       </div>
-    </div>
     <div class="modal-links">
       <button class="modal-link-btn" onclick="window.open('https://www.zig-zag.ai','_blank','noopener')">Visit Zig-Zag AI →</button>
       <button class="modal-link-btn outline" onclick="closeModal('modal-zigzag')">Close</button>
