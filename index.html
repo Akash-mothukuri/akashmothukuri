@@ -1509,6 +1509,9 @@ function handleForm(e){
   }
   window.exitLanding = exitLanding;
 
+  // Auto-exit after 2.5 seconds
+  setTimeout(function(){ exitLanding(); }, 2500);
+
   // Mouse wheel
   window.addEventListener('wheel', function h(e){
     exitLanding(); window.removeEventListener('wheel',h);
