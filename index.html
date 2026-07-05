@@ -7,6 +7,13 @@
 
 // Attach click handlers to all project cards
 function attachCardClicks(){
+  // CV buttons
+  document.querySelectorAll('[data-action="openCV"]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      downloadCV();
+    });
+  });
   var cards = document.querySelectorAll('.proj-item[data-modal]');
   cards.forEach(function(card){
     card.addEventListener('click', function(e){
@@ -633,7 +640,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     <li><button onclick="go('contact')">Contact</button></li>
   </ul>
   <div class="nav-right">
-    <button class="nav-cv" onclick="downloadCV()">View CV</button>
+    <button class="nav-cv" data-action="openCV">View CV</button>
     <button class="nav-hire" onclick="go('contact')">Hire Me</button>
   </div>
 </nav>
@@ -650,7 +657,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     <p class="hero-bio">I build mobile and full-stack applications that real people use every day. One of my projects crossed <strong>1M+ downloads</strong>. I care about <strong>clean architecture</strong>, <strong>performance</strong>, and shipping things that actually work at scale.</p>
     <div class="hero-ctas">
       <button class="cta-main" onclick="go('projects')">See my work</button>
-      <button class="cta-cv" onclick="downloadCV()">View CV</button>
+      <button class="cta-cv" data-action="openCV">View CV</button>
       <button class="cta-sec" onclick="go('contact')">Let's talk</button>
     </div>
   </div>
@@ -973,7 +980,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
         <button class="c-social" title="LinkedIn" onclick="window.open('https://linkedin.com/in/akash-mothukuri-7b1bb6211','_blank','noopener')">in</button>
         <button class="c-social" title="GitHub" onclick="window.open('https://github.com/Akash-mothukuri','_blank','noopener')">gh</button>
         <button class="c-social" title="Email" onclick="window.location.href='mailto:mothukuriashok28@gmail.com'">@</button>
-        <button class="c-social" title="View CV" onclick="downloadCV()">cv</button>
+        <button class="c-social" title="View CV" data-action="openCV">cv</button>
       </div>
     </div>
   </div>
@@ -986,7 +993,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
     <button class="f-soc-btn" onclick="window.open('https://linkedin.com/in/akash-mothukuri-7b1bb6211','_blank','noopener')">LinkedIn</button>
     <button class="f-soc-btn" onclick="window.open('https://github.com/Akash-mothukuri','_blank','noopener')">GitHub</button>
     <button class="f-soc-btn" onclick="window.location.href='mailto:mothukuriashok28@gmail.com'">Email</button>
-    <button class="f-soc-btn" onclick="downloadCV()">View CV</button>
+    <button class="f-soc-btn" data-action="openCV">View CV</button>
   </div>
 </footer>
 
