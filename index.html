@@ -106,6 +106,27 @@ function cvClose(){
   el.style.display='none';
   document.body.style.overflow='';
 }
+function cvDownload(){
+  var a=document.createElement('a');
+  a.href='AkashMothukuri_cv.pdf';
+  a.download='AkashMothukuri_cv.pdf';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+function cvPrint(){
+  var area=document.getElementById('cv-print-area');
+  if(!area){window.print();return;}
+  var w=window.open('','_blank');
+  if(!w){window.print();return;}
+  w.document.write('<html><head><title>Akash Mothukuri CV</title>');
+  w.document.write('<style>body{font-family:Calibri,Arial,sans-serif;font-size:13px;margin:32px;color:#111;line-height:1.5}</style>');
+  w.document.write('</head><body>');
+  w.document.write(area.innerHTML);
+  w.document.write('</body></html>');
+  w.document.close();
+  setTimeout(function(){w.print();},500);
+}
 function handleForm(e){
   e.preventDefault();
   var btn=document.getElementById('f-submit');
