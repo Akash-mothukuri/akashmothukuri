@@ -107,12 +107,23 @@ function cvClose(){
   document.body.style.overflow='';
 }
 function cvDownload(){
-  var a=document.createElement('a');
-  a.href='AkashMothukuri_cv.pdf';
-  a.download='AkashMothukuri_cv.pdf';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+  var names=['AkashMothukuri_cv.pdf','AkashMothukuri_CV.pdf','AkashMothukuri.cv.pdf','akashmothukuri_cv.pdf'];
+  function tryNext(i){
+    if(i>=names.length){alert('CV file not found on the site. Please contact me at mothukuriashok28@gmail.com');return;}
+    fetch(names[i],{method:'HEAD'}).then(function(r){
+      if(r.ok){
+        var a=document.createElement('a');
+        a.href=names[i];
+        a.download='AkashMothukuri_CV.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      } else {
+        tryNext(i+1);
+      }
+    }).catch(function(){tryNext(i+1);});
+  }
+  tryNext(0);
 }
 function cvPrint(){
   var area=document.getElementById('cv-print-area');
